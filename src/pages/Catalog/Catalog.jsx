@@ -1,7 +1,10 @@
+import FilterForm from "../../components/Form/FilterForm.jsx";
+import Container from "../../components/shared/Container/Container";
+
 export default function Catalog() {
   return (
-    <div>
-      <h3>Catalog</h3>
-    </div>
+    <Container>
+      <FilterForm />
+    </Container>
   );
 }

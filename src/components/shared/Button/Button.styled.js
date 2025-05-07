@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
   color: ${(props) =>
-    props.variant === "general"
+    props.$buttonstyle === "general"
       ? "var(--White, #fff)"
       : "var(--Main, #101828)"};
   font-family: Inter;
@@ -21,11 +21,11 @@ export const StyledButton = styled.button`
 
   border-radius: 200px;
   background-color: ${(props) =>
-    props.variant === "general"
+    props.$buttonstyle === "general"
       ? "var(--Button, #e44848)"
       : "var(--White, #FFF)"};
   border: ${(props) =>
-    props.variant === "general"
+    props.$buttonstyle === "general"
       ? "inherit"
       : "1px solid var(--Gray-light, #DADDE1)"};
   cursor: pointer;
@@ -35,9 +35,11 @@ export const StyledButton = styled.button`
   &:hover,
   &:focus {
     background-color: ${(props) =>
-      props.variant === "general" ? "var(--Button-Hover, #d84343)" : "inherit"};
+      props.$buttonstyle === "general"
+        ? "var(--Button-Hover, #d84343)"
+        : "inherit"};
     border: ${(props) =>
-      props.variant === "general"
+      props.$buttonstyle === "general"
         ? "inherit"
         : "1px solid var(--Button-Hover, #D84343);"};
   }
