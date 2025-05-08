@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import Button from "../../components/shared/Button/Button";
-
 import { Hero, Title, Text, StyledLink, Wrapper } from "./Home.styled";
 
 export default function Home() {

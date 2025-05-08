@@ -10,7 +10,6 @@ import {
   Divider,
   List,
   StyledLabel,
-  StyledButton,
 } from "./FilterForm.styled";
 
 import Wind from "/icons/wind.svg";
@@ -52,7 +51,7 @@ export default function FilterForm() {
         <List>
           <li>
             <StyledLabel>
-              <img src={Wind} alt="" />
+              <img src={Wind} alt="icon" />
               AC
               <Field
                 type="checkbox"
@@ -65,7 +64,7 @@ export default function FilterForm() {
 
           <li>
             <StyledLabel>
-              <img src={Automatic} alt="" />
+              <img src={Automatic} alt="icon" />
               Automatic
               <Field
                 type="checkbox"
@@ -78,7 +77,7 @@ export default function FilterForm() {
 
           <li>
             <StyledLabel>
-              <img src={Cup} alt="" />
+              <img src={Cup} alt="icon" />
               Kitchen
               <Field
                 type="checkbox"
@@ -91,7 +90,7 @@ export default function FilterForm() {
 
           <li>
             <StyledLabel>
-              <img src={TV} alt="" />
+              <img src={TV} alt="icon" />
               TV
               <Field
                 type="checkbox"
@@ -104,7 +103,7 @@ export default function FilterForm() {
 
           <li>
             <StyledLabel>
-              <img src={Shower} alt="" />
+              <img src={Shower} alt="icon" />
               Bathroom
               <Field
                 type="checkbox"
@@ -130,10 +129,7 @@ export default function FilterForm() {
 
           <li>
             <StyledLabel>
-              <img
-                src="/public/icons/fully-integrated.svg"
-                alt="Fully integrated"
-              />
+              <img src="/icons/fully-integrated.svg" alt="Fully integrated" />
               Fully Integrated
               <Field type="radio" name="type" value="fully integrated" />
             </StyledLabel>
@@ -141,7 +137,7 @@ export default function FilterForm() {
 
           <li>
             <StyledLabel>
-              <img src="/public/icons/alcove.svg" alt="Alcove" />
+              <img src="/icons/alcove.svg" alt="Alcove" />
               Alcove
               <Field type="radio" name="type" value="alcove" />
             </StyledLabel>
