@@ -1,3 +1,4 @@
+import Badges from "../../shared/Badges/Badges";
 import {
   CardWrapper,
   Img,
@@ -10,6 +11,12 @@ import {
   SupportText,
   InfoWrapper,
 } from "./Card.styled";
+
+import Wind from "/icons/wind.svg";
+import Automatic from "/icons/automatic.svg";
+import Petrol from "/icons/petrol.svg";
+import Cup from "/icons/cup.svg";
+import { BadgesList, StyledButton } from "../CardList/Card.styled";
 
 export default function Card({
   name,
@@ -50,6 +57,14 @@ export default function Card({
         </DetailsWrapper>
 
         <SupportText>{description.slice(0, 65)}...</SupportText>
+        <BadgesList>
+          <Badges path={Automatic} title="Automatic" />
+          <Badges path={Petrol} title="Petrol" />
+          <Badges path={Cup} title="Kitchen" />
+          <Badges path={Wind} title="AC" />
+        </BadgesList>
+
+        <StyledButton>Show more</StyledButton>
       </InfoWrapper>
     </CardWrapper>
   );
