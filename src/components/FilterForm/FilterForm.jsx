@@ -21,7 +21,6 @@ import Button from "../shared/Button/Button";
 
 export default function FilterForm() {
   const locationFieldId = useId();
-  const equipmentFieldId = useId();
 
   const handleSubmit = (value, actions) => {
     console.log(value);
@@ -53,12 +52,7 @@ export default function FilterForm() {
             <StyledLabel>
               <img src={Wind} alt="icon" />
               AC
-              <Field
-                type="checkbox"
-                name="equipment"
-                value="ac"
-                id={equipmentFieldId}
-              />
+              <Field type="checkbox" name="equipment" value="ac" />
             </StyledLabel>
           </li>
 
@@ -66,12 +60,7 @@ export default function FilterForm() {
             <StyledLabel>
               <img src={Automatic} alt="icon" />
               Automatic
-              <Field
-                type="checkbox"
-                name="equipment"
-                value="automatic"
-                id={equipmentFieldId}
-              />
+              <Field type="checkbox" name="equipment" value="automatic" />
             </StyledLabel>
           </li>
 
@@ -79,12 +68,7 @@ export default function FilterForm() {
             <StyledLabel>
               <img src={Cup} alt="icon" />
               Kitchen
-              <Field
-                type="checkbox"
-                name="equipment"
-                value="kitchen"
-                id={equipmentFieldId}
-              />
+              <Field type="checkbox" name="equipment" value="kitchen" />
             </StyledLabel>
           </li>
 
@@ -92,12 +76,7 @@ export default function FilterForm() {
             <StyledLabel>
               <img src={TV} alt="icon" />
               TV
-              <Field
-                type="checkbox"
-                name="equipment"
-                value="tv"
-                id={equipmentFieldId}
-              />
+              <Field type="checkbox" name="equipment" value="tv" />
             </StyledLabel>
           </li>
 
@@ -105,12 +84,7 @@ export default function FilterForm() {
             <StyledLabel>
               <img src={Shower} alt="icon" />
               Bathroom
-              <Field
-                type="checkbox"
-                name="equipment"
-                value="bathroom"
-                id={equipmentFieldId}
-              />
+              <Field type="checkbox" name="equipment" value="bathroom" />
             </StyledLabel>
           </li>
         </List>
