@@ -10,15 +10,17 @@ import {
   Text,
   SupportText,
   InfoWrapper,
+  BadgesList,
+  StyledButton,
 } from "./Card.styled";
 
 import Wind from "/icons/wind.svg";
 import Automatic from "/icons/automatic.svg";
 import Petrol from "/icons/petrol.svg";
 import Cup from "/icons/cup.svg";
-import { BadgesList, StyledButton } from "../CardList/Card.styled";
 
 export default function Card({
+  id,
   name,
   price,
   gallery,
@@ -27,7 +29,6 @@ export default function Card({
   location,
   description,
 }) {
-  // console.log(data);
   return (
     <CardWrapper>
       <Img src={gallery[0].thumb} alt="camper picture" />
@@ -64,7 +65,7 @@ export default function Card({
           <Badges path={Wind} title="AC" />
         </BadgesList>
 
-        <StyledButton>Show more</StyledButton>
+        <StyledButton to={id}>Show more</StyledButton>
       </InfoWrapper>
     </CardWrapper>
   );

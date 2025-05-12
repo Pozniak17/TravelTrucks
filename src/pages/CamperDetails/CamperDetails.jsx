@@ -1,8 +1,23 @@
-import { useParams } from "react-router-dom";
-import Container from "../../components/shared/Container/Container";
+import { Outlet, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Title, ReviewsWrapper } from "./CamperDetails.styled";
+import {
+  StyledContainer,
+  Title,
+  Wrapper,
+  ReviewsWrapper,
+  LocationWrapper,
+  PriceTitle,
+  ImgList,
+  Item,
+  Img,
+  Description,
+  TabList,
+  StyledLink,
+  Divider,
+  DetailsWrapper,
+} from "./CamperDetails.styled";
+import DetailForm from "../../components/DetailForm/DetailForm";
 
 export default function CamperDetails() {
   const [details, setDetails] = useState([]);
@@ -19,22 +34,54 @@ export default function CamperDetails() {
 
     fetchCamperDetails();
   }, [id]);
+
+  console.log(details.gallery);
+
   return (
-    <Container>
+    <StyledContainer>
       <Title>{details.name}</Title>
-      <div>
+      <Wrapper>
         <ReviewsWrapper>
           <img src="/public/icons/star.svg" alt="star icon" />
           <p>{details.rating}(2Reviews)</p>
         </ReviewsWrapper>
 
-        <div>
-          <div>
-            <img src="/public/icons/map2.svg" alt="map icon" />
-            <p>{details.location}</p>
-          </div>
-        </div>
+        <LocationWrapper>
+          <img src="/public/icons/map2.svg" alt="map icon" />
+          <p>{details.location}</p>
+        </LocationWrapper>
+      </Wrapper>
+
+      <PriceTitle>€{details.price}</PriceTitle>
+
+      <ImgList>
+        {details.gallery?.map((image) => (
+          <Item key={image.original}>
+            <Img src={image.original} alt="Camper photo" />
+          </Item>
+        ))}
+      </ImgList>
+
+      <Description>{details.description}</Description>
+
+      <div>
+        <TabList>
+          <li>
+            <StyledLink to="features">Features</StyledLink>
+          </li>
+          <li>
+            <StyledLink to="reviews">Reviews</StyledLink>
+          </li>
+        </TabList>
+        <Divider />
+
+        <DetailsWrapper>
+          <Outlet />
+          <DetailForm />
+        </DetailsWrapper>
       </div>
-    </Container>
+    </StyledContainer>
   );
 }
+
+// 1. іконки взяти одні й ті, задати width
