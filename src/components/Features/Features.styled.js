@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 631px;
-  /* height: 588px; */
+  margin-top: 44px;
   padding: 44px 52px;
   border-radius: 10px;
   background: var(--Inputs, #f7f7f7);

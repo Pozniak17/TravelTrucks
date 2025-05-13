@@ -1,20 +1,19 @@
+import { useOutletContext } from "react-router-dom";
 import { Divider } from "../FilterForm/FilterForm.styled";
 import Badges from "../shared/Badges/Badges";
 import { Wrapper, List, DetailsList, Item } from "./Features.styled";
 
 export default function Features() {
+  const camperData = useOutletContext();
+
   return (
     <Wrapper>
       <List>
-        <Badges color="#F2F4F7" path="/icons/automatic.svg" title="Automatic" />
-        <Badges color="#F2F4F7" path="/public/icons/wind.svg" title="AC" />
-        <Badges
-          color="#F2F4F7"
-          path="/public/icons/petrol.svg"
-          title="Petrol"
-        />
-        <Badges color="#F2F4F7" path="/public/icons/cup.svg" title="Kitchen" />
-        <Badges color="#F2F4F7" path="/public/icons/radio.svg" title="Radio" />
+        <Badges path="/icons/automatic.svg" title="Automatic" />
+        <Badges path="/icons/wind.svg" title="AC" />
+        <Badges path="/icons/petrol.svg" title="Petrol" />
+        <Badges path="/icons/cup.svg" title="Kitchen" />
+        <Badges path="/icons/radio.svg" title="Radio" />
       </List>
 
       <h3>Vehicle details</h3>
@@ -23,27 +22,27 @@ export default function Features() {
       <DetailsList>
         <Item>
           <span>Form</span>
-          <span>Panel truck</span>
+          <span>{camperData.form}</span>
         </Item>
         <Item>
           <span>Length</span>
-          <span>5.4 m</span>
+          <span>{camperData.length}</span>
         </Item>
         <Item>
           <span>Width</span>
-          <span>2.01 m</span>
+          <span>{camperData.width}</span>
         </Item>
         <Item>
           <span>Height</span>
-          <span>2.05 m</span>
+          <span>{camperData.height}</span>
         </Item>
         <Item>
           <span>Tank</span>
-          <span>132 I</span>
+          <span>{camperData.tank}</span>
         </Item>
         <Item>
           <span>Consumption</span>
-          <span>12.4l/100km</span>
+          <span>{camperData.consumption}</span>
         </Item>
       </DetailsList>
     </Wrapper>

@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+export const Logo = styled(NavLink)`
+  text-decoration: none;
+`;
+
 export const Header = styled.header`
   padding: 24px 64px;
   display: flex;
+  align-items: center;
   border-bottom: 1px solid var(--Badges, #f2f4f7);
   background: var(--Inputs, #f7f7f7);
 `;

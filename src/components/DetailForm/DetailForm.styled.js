@@ -2,6 +2,7 @@ import { Field, Form } from "formik";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  margin-top: 44px;
   width: 641px;
   padding: 44px 57px;
   border-radius: 10px;

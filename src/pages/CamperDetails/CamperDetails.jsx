@@ -35,19 +35,17 @@ export default function CamperDetails() {
     fetchCamperDetails();
   }, [id]);
 
-  console.log(details.gallery);
-
   return (
     <StyledContainer>
       <Title>{details.name}</Title>
       <Wrapper>
         <ReviewsWrapper>
-          <img src="/public/icons/star.svg" alt="star icon" />
+          <img src="/icons/star.svg" alt="star icon" />
           <p>{details.rating}(2Reviews)</p>
         </ReviewsWrapper>
 
         <LocationWrapper>
-          <img src="/public/icons/map2.svg" alt="map icon" />
+          <img src="/icons/map2.svg" alt="map icon" />
           <p>{details.location}</p>
         </LocationWrapper>
       </Wrapper>
@@ -55,7 +53,7 @@ export default function CamperDetails() {
       <PriceTitle>€{details.price}</PriceTitle>
 
       <ImgList>
-        {details.gallery?.map((image) => (
+        {details?.gallery?.map((image) => (
           <Item key={image.original}>
             <Img src={image.original} alt="Camper photo" />
           </Item>
@@ -76,7 +74,7 @@ export default function CamperDetails() {
         <Divider />
 
         <DetailsWrapper>
-          <Outlet />
+          <Outlet context={details} />
           <DetailForm />
         </DetailsWrapper>
       </div>
