@@ -1,6 +1,12 @@
 import { Formik } from "formik";
-import { Wrapper, Title, Text, Input, StyledForm } from "./DetailForm.styled";
-import Button from "../shared/Button/Button";
+import {
+  Wrapper,
+  Title,
+  Text,
+  Input,
+  StyledForm,
+  StyledButton,
+} from "./DetailForm.styled";
 
 export default function DetailForm() {
   const handleSubmit = (values, actions) => {
@@ -18,10 +24,14 @@ export default function DetailForm() {
       >
         <StyledForm>
           <Input type="text" placeholder="Name*" name="username" />
+
           <Input type="email" placeholder="Email*" name="email" />
+
           <Input type="date" placeholder="Booking date*" name="date" />
+
           <Input as="textarea" placeholder="Comment" name="message" />
-          <button type="submit">Send</button>
+
+          <StyledButton type="submit">Send</StyledButton>
         </StyledForm>
       </Formik>
     </Wrapper>

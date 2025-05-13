@@ -11,7 +11,7 @@ export const Wrapper = styled.li`
   text-align: center;
 
   border-radius: 100px;
-  background: var(--Badges, #f2f4f7);
+  background: ${(props) => props.color};
 
   /* Body 2 */
   font-family: Inter;

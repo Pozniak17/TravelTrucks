@@ -115,6 +115,7 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const Divider = styled.span`
+  width: 1312px;
   display: block;
   margin-top: 24px;
   margin-bottom: 44px;

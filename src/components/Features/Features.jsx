@@ -6,11 +6,15 @@ export default function Features() {
   return (
     <Wrapper>
       <List>
-        <Badges path="/icons/automatic.svg" title="Automatic" />
-        <Badges path="/public/icons/wind.svg" title="AC" />
-        <Badges path="/public/icons/petrol.svg" title="Petrol" />
-        <Badges path="/public/icons/cup.svg" title="Kitchen" />
-        <Badges path="/public/icons/radio.svg" title="Radio" />
+        <Badges color="#F2F4F7" path="/icons/automatic.svg" title="Automatic" />
+        <Badges color="#F2F4F7" path="/public/icons/wind.svg" title="AC" />
+        <Badges
+          color="#F2F4F7"
+          path="/public/icons/petrol.svg"
+          title="Petrol"
+        />
+        <Badges color="#F2F4F7" path="/public/icons/cup.svg" title="Kitchen" />
+        <Badges color="#F2F4F7" path="/public/icons/radio.svg" title="Radio" />
       </List>
 
       <h3>Vehicle details</h3>
