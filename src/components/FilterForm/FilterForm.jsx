@@ -19,18 +19,27 @@ import TV from "/icons/tv.svg";
 import Shower from "/icons/shower.svg";
 import Button from "../shared/Button/Button";
 
-export default function FilterForm() {
+const initialValues = {
+  location: "",
+  equipment: [],
+  type: "",
+};
+
+export default function FilterForm({ onSearch }) {
   const locationFieldId = useId();
 
   const handleSubmit = (value, actions) => {
     console.log(value);
+    const data = {
+      location: value.location,
+      // equipment: value.equipment.AC,
+      // transmission: value.equipment.
+    };
+    onSearch(data);
     actions.resetForm();
   };
   return (
-    <Formik
-      initialValues={{ location: "", equipment: [], type: "" }}
-      onSubmit={handleSubmit}
-    >
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       <StyledForm>
         <Wrapper>
           <Label htmlFor={locationFieldId}>Location</Label>
@@ -52,7 +61,7 @@ export default function FilterForm() {
             <StyledLabel>
               <img src={Wind} alt="icon" />
               AC
-              <Field type="checkbox" name="equipment" value="ac" />
+              <Field type="checkbox" name="equipment" value="AC" />
             </StyledLabel>
           </li>
 
