@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
 import CardList from "../../components/CardList/CardList/CardList.jsx";
 import FilterForm from "../../components/FilterForm/FilterForm.jsx";
 import Container from "../../components/shared/Container/Container";
@@ -9,7 +8,9 @@ export default function Catalog() {
   const [campers, setCampers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [limit, setLimit] = useState(4);
 
+  // параметри фільтра
   const [filter, setFilter] = useState([]);
   console.log(filter);
 
@@ -17,7 +18,7 @@ export default function Catalog() {
     async function fetchCampers() {
       try {
         setLoading(true);
-        const data = await fetchCampersWithFilter(filter);
+        const data = await fetchCampersWithFilter(filter, limit);
 
         setCampers(data);
       } catch (error) {
@@ -30,11 +31,14 @@ export default function Catalog() {
     }
     //   2. Викликаємо її одну після оголошення
     fetchCampers();
-  }, [filter]);
+  }, [filter, limit]);
 
   const handleSearch = (filterdata) => {
-    // console.log(filterdata);
     setFilter(filterdata);
+  };
+
+  const loadMore = () => {
+    setLimit((limit) => limit + 4);
   };
 
   return (
@@ -44,7 +48,9 @@ export default function Catalog() {
       {error && (
         <p>Whoops, something went wrong! Please try reloading this page!</p>
       )}
-      {campers.length > 0 && <CardList items={campers} />}
+      {campers.length > 0 && (
+        <CardList items={campers} handleClick={loadMore} />
+      )}
     </Container>
   );
 }

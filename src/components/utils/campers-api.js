@@ -2,11 +2,12 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
-export const fetchCampersWithFilter = async (filter) => {
+export const fetchCampersWithFilter = async (filter, limit) => {
   const { location, AC, automatic, kitchen, TV, bathroom, form } = filter;
 
-  const params = { limit: 4, page: 1 };
+  const params = { limit, page: 1 };
 
+  // додаю в об'єкт params, якщо властивість не false, щоб не включати при запиті false
   if (location) {
     params.location = location;
   }
