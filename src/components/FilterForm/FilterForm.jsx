@@ -21,22 +21,23 @@ import Button from "../shared/Button/Button";
 
 const initialValues = {
   location: "",
-  equipment: [],
-  type: "",
+  AC: false,
+  automatic: false,
+  kitchen: false,
+  TV: false,
+  bathroom: false,
+  form: "",
 };
 
 export default function FilterForm({ onSearch }) {
   const locationFieldId = useId();
 
-  const handleSubmit = (value, actions) => {
+  const handleSubmit = (value, { resetForm }) => {
     console.log(value);
-    const data = {
-      location: value.location,
-      // equipment: value.equipment.AC,
-      // transmission: value.equipment.
-    };
-    onSearch(data);
-    actions.resetForm();
+
+    onSearch(value);
+
+    resetForm();
   };
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
@@ -61,7 +62,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src={Wind} alt="icon" />
               AC
-              <Field type="checkbox" name="equipment" value="AC" />
+              <Field type="checkbox" name="AC" />
             </StyledLabel>
           </li>
 
@@ -69,7 +70,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src={Automatic} alt="icon" />
               Automatic
-              <Field type="checkbox" name="equipment" value="automatic" />
+              <Field type="checkbox" name="automatic" />
             </StyledLabel>
           </li>
 
@@ -77,7 +78,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src={Cup} alt="icon" />
               Kitchen
-              <Field type="checkbox" name="equipment" value="kitchen" />
+              <Field type="checkbox" name="kitchen" />
             </StyledLabel>
           </li>
 
@@ -85,7 +86,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src={TV} alt="icon" />
               TV
-              <Field type="checkbox" name="equipment" value="tv" />
+              <Field type="checkbox" name="TV" />
             </StyledLabel>
           </li>
 
@@ -93,7 +94,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src={Shower} alt="icon" />
               Bathroom
-              <Field type="checkbox" name="equipment" value="bathroom" />
+              <Field type="checkbox" name="bathroom" />
             </StyledLabel>
           </li>
         </List>
@@ -106,7 +107,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src="/icons/van.svg" alt="Van" />
               Van
-              <Field type="radio" name="type" value="van" />
+              <Field type="radio" name="form" value="panelTruck" />
             </StyledLabel>
           </li>
 
@@ -114,7 +115,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src="/icons/fully-integrated.svg" alt="Fully integrated" />
               Fully Integrated
-              <Field type="radio" name="type" value="fully integrated" />
+              <Field type="radio" name="form" value="fullyIntegrated" />
             </StyledLabel>
           </li>
 
@@ -122,7 +123,7 @@ export default function FilterForm({ onSearch }) {
             <StyledLabel>
               <img src="/icons/alcove.svg" alt="Alcove" />
               Alcove
-              <Field type="radio" name="type" value="alcove" />
+              <Field type="radio" name="form" value="alcove" />
             </StyledLabel>
           </li>
         </List>

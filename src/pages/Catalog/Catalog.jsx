@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import CardList from "../../components/CardList/CardList/CardList.jsx";
 import FilterForm from "../../components/FilterForm/FilterForm.jsx";
 import Container from "../../components/shared/Container/Container";
@@ -17,7 +17,7 @@ export default function Catalog() {
     async function fetchCampers() {
       try {
         setLoading(true);
-        const data = await fetchCampersWithFilter();
+        const data = await fetchCampersWithFilter(filter);
 
         setCampers(data);
       } catch (error) {
@@ -30,7 +30,7 @@ export default function Catalog() {
     }
     //   2. Викликаємо її одну після оголошення
     fetchCampers();
-  }, []);
+  }, [filter]);
 
   const handleSearch = (filterdata) => {
     // console.log(filterdata);
