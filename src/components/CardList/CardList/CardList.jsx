@@ -1,14 +1,14 @@
-// import { useState } from "react";
-// import axios from "axios";
+import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { Button, List } from "./CardList.styled";
 
-export default function CardList({ items, handleClick }) {
-  console.log(items);
+export default function CardList({ nextPage }) {
+  const campers = useSelector((state) => state.campers.items);
+  console.log(campers);
   return (
     <div>
       <List>
-        {items.map(
+        {campers.map(
           ({
             id,
             name,
@@ -33,7 +33,7 @@ export default function CardList({ items, handleClick }) {
           )
         )}
       </List>
-      <Button onClick={handleClick}>Load more</Button>
+      <Button onClick={() => nextPage()}>Load more</Button>
     </div>
   );
 }
