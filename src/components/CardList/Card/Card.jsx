@@ -1,4 +1,5 @@
 import Badges from "../../shared/Badges/Badges";
+import { useNavigate } from "react-router-dom";
 import {
   CardWrapper,
   Img,
@@ -29,6 +30,7 @@ export default function Card({
   location,
   description,
 }) {
+  const navigate = useNavigate();
   return (
     <CardWrapper>
       <Img src={gallery[0].thumb} alt="camper picture" />
@@ -65,7 +67,7 @@ export default function Card({
           <Badges path={Wind} title="AC" />
         </BadgesList>
 
-        <StyledButton to={id}>Show more</StyledButton>
+        <StyledButton to={`${id}/features`}>Show more</StyledButton>
       </InfoWrapper>
     </CardWrapper>
   );

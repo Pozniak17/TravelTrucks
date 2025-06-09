@@ -4,7 +4,7 @@ import { Button, List } from "./CardList.styled";
 
 export default function CardList({ nextPage }) {
   const campers = useSelector((state) => state.campers.items);
-  console.log(campers);
+
   return (
     <div>
       <List>
@@ -33,6 +33,7 @@ export default function CardList({ nextPage }) {
           )
         )}
       </List>
+
       <Button onClick={() => nextPage()}>Load more</Button>
     </div>
   );
