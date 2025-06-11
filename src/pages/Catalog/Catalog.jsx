@@ -16,12 +16,21 @@ export default function Catalog() {
   const [limit, setLimit] = useState(4);
 
   useEffect(() => {
-    if (location) {
-      dispatch(fetchCampersByFilters({ limit, location, filters }));
-    } else {
-      dispatch(fetchCampers({ limit }));
-    }
-  }, [dispatch, limit, location, filters]);
+    dispatch(fetchCampers({ limit }));
+  }, [dispatch, limit]);
+
+  //* тут і проблема, якщо location то запускаються
+  useEffect(() => {
+    dispatch(fetchCampersByFilters({ limit, location, filters }));
+  }, [dispatch, filters, limit, location]);
+
+  // useEffect(() => {
+  //   if (location) {
+  //     dispatch(fetchCampersByFilters({ limit, location, filters }));
+  //   } else {
+  //     dispatch(fetchCampers({ limit }));
+  //   }
+  // }, [dispatch, limit, location, filters]);
 
   const loadMore = () => {
     setLimit((limit) => limit + 4);

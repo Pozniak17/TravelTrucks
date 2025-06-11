@@ -4,6 +4,9 @@ import { Button, List } from "./CardList.styled";
 
 export default function CardList({ nextPage }) {
   const campers = useSelector((state) => state.campers.items);
+  const total = useSelector((state) => state.campers.total);
+
+  console.log(campers);
 
   return (
     <div>
@@ -34,7 +37,9 @@ export default function CardList({ nextPage }) {
         )}
       </List>
 
-      <Button onClick={() => nextPage()}>Load more</Button>
+      {campers.length <= total && (
+        <Button onClick={() => nextPage()}>Load more</Button>
+      )}
     </div>
   );
 }

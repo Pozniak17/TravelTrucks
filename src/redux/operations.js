@@ -8,6 +8,7 @@ export const fetchCampers = createAsyncThunk(
   "campers/fetchAll",
   async (data, thunkAPI) => {
     const { limit } = data;
+
     try {
       const response = await axios.get("/campers", {
         params: {
@@ -15,7 +16,7 @@ export const fetchCampers = createAsyncThunk(
           limit,
         },
       });
-      return response.data.items;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -30,8 +31,8 @@ export const fetchCampersByFilters = createAsyncThunk(
     try {
       const response = await axios.get("/campers", {
         params: {
-          limit,
           page: 1,
+          limit,
           location,
           filters,
         },
