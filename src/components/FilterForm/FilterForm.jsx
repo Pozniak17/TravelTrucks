@@ -18,7 +18,7 @@ import Cup from "/icons/cup.svg";
 import TV from "/icons/tv.svg";
 import Shower from "/icons/shower.svg";
 import Button from "../shared/Button/Button";
-import { setFilter } from "../../redux/filtersSlice";
+import { clearFilters, setFilter } from "../../redux/filtersSlice";
 import { useDispatch } from "react-redux";
 
 const initialValues = {
@@ -36,6 +36,8 @@ export default function FilterForm() {
   const locationFieldId = useId();
 
   const handleSubmit = (value, { resetForm }) => {
+    dispatch(clearFilters());
+
     let filteredData = {};
 
     for (const key in value) {

@@ -3,15 +3,15 @@ import Card from "../Card/Card";
 import { Button, List } from "./CardList.styled";
 
 export default function CardList({ nextPage }) {
-  const campers = useSelector((state) => state.campers.items);
-  const total = useSelector((state) => state.campers.total);
+  const { items, total } = useSelector((state) => state.campers);
 
-  console.log(campers);
+  // console.log("items:", campers.length);
+  // console.log("total:", total);
 
   return (
     <div>
       <List>
-        {campers.map(
+        {items.map(
           ({
             id,
             name,
@@ -37,7 +37,7 @@ export default function CardList({ nextPage }) {
         )}
       </List>
 
-      {campers.length <= total && (
+      {items.length < total && (
         <Button onClick={() => nextPage()}>Load more</Button>
       )}
     </div>
