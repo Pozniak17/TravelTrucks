@@ -1,5 +1,4 @@
 import Badges from "../../shared/Badges/Badges";
-import { useNavigate } from "react-router-dom";
 import {
   CardWrapper,
   Img,
@@ -29,8 +28,9 @@ export default function Card({
   reviews,
   location,
   description,
+  isFavorite,
+  onToggleFavorite,
 }) {
-  const navigate = useNavigate();
   return (
     <CardWrapper>
       <Img src={gallery[0].thumb} alt="camper picture" />
@@ -41,7 +41,19 @@ export default function Card({
 
           <IconWrapper>
             <Title>€{price}.00</Title>
-            <img src="/icons/heart.svg" alt="heart icon" />
+            {isFavorite ? (
+              <img
+                src="/icons/heart-red.svg"
+                alt="heart icon"
+                onClick={onToggleFavorite}
+              />
+            ) : (
+              <img
+                src="/icons/heart.svg"
+                alt="heart icon"
+                onClick={onToggleFavorite}
+              />
+            )}
           </IconWrapper>
         </TitleWrapper>
 

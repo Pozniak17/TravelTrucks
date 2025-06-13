@@ -1,40 +1,31 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { Button, List } from "./CardList.styled";
+import { toggleFavorite } from "../../../redux/favoritesSlice";
 
 export default function CardList({ nextPage }) {
   const { items, total } = useSelector((state) => state.campers);
+  const dispatch = useDispatch();
 
   // console.log("items:", campers.length);
   // console.log("total:", total);
+  const favorites = useSelector((state) => state.favorites.items);
+
+  const handleToggleFavorite = (car) => {
+    dispatch(toggleFavorite(car));
+  };
 
   return (
     <div>
       <List>
-        {items.map(
-          ({
-            id,
-            name,
-            price,
-            gallery,
-            rating,
-            reviews,
-            location,
-            description,
-          }) => (
-            <Card
-              key={id}
-              id={id}
-              name={name}
-              price={price}
-              gallery={gallery}
-              rating={rating}
-              reviews={reviews}
-              location={location}
-              description={description}
-            />
-          )
-        )}
+        {items.map((car) => (
+          <Card
+            key={car.id}
+            {...car}
+            isFavorite={favorites.some((fav) => fav.id === car.id)}
+            onToggleFavorite={() => handleToggleFavorite(car)}
+          />
+        ))}
       </List>
 
       {items.length < total && (

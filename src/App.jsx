@@ -6,6 +6,7 @@ import AppBar from "./components/AppBar/AppBar";
 import CamperDetails from "./pages/CamperDetails/CamperDetails";
 import Features from "./components/Features/Features";
 import Reviews from "./components/Reviews/Reviews";
+import Favorites from "./pages/Favorites/Favorites";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/catalog/:id" element={<CamperDetails />}>
           <Route path="features" element={<Features />} />
           <Route path="reviews" element={<Reviews />} />

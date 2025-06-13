@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CardWrapper = styled.li`
+  width: 888px;
   padding: 24px;
   display: flex;
   gap: 24px;
