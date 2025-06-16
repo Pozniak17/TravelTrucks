@@ -5,6 +5,7 @@ import Container from "../../components/shared/Container/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/operations.js";
 import { Loader } from "../../components/Loader/Loader.jsx";
+import Error from "../../components/Error/Error.jsx";
 
 export default function Catalog() {
   const dispatch = useDispatch();
@@ -25,12 +26,14 @@ export default function Catalog() {
   return (
     <Container>
       {isLoading && <Loader />}
-      {/* <Loader /> */}
       <FilterForm />
-      {error && (
-        <p>Whoops, something went wrong! Please try reloading this page!</p>
+      {error || campers.length === 0 ? (
+        <Error />
+      ) : (
+        <CardList nextPage={loadMore} />
       )}
-      {campers.length > 0 && <CardList nextPage={loadMore} />}
+      {/* {error && <Error />}
+      {campers.length > 0 && <CardList nextPage={loadMore} />} */}
     </Container>
   );
 }

@@ -21,7 +21,7 @@ export const fetchCampers = createAsyncThunk(
         },
       });
 
-      await delay(400); // Штучна затримка перед поверненням даних
+      await delay(500); // Штучна затримка перед поверненням даних
 
       return response.data;
     } catch (error) {
