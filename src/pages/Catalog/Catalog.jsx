@@ -4,6 +4,7 @@ import FilterForm from "../../components/FilterForm/FilterForm.jsx";
 import Container from "../../components/shared/Container/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/operations.js";
+import { Loader } from "../../components/Loader/Loader.jsx";
 
 export default function Catalog() {
   const dispatch = useDispatch();
@@ -23,8 +24,9 @@ export default function Catalog() {
 
   return (
     <Container>
+      {isLoading && <Loader />}
+      {/* <Loader /> */}
       <FilterForm />
-      {isLoading && <p>Loading data, please wait...</p>}
       {error && (
         <p>Whoops, something went wrong! Please try reloading this page!</p>
       )}
