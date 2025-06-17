@@ -11,13 +11,13 @@ import {
   SupportText,
   InfoWrapper,
   BadgesList,
-  StyledButton,
 } from "./Card.styled";
 
 import Wind from "/icons/wind.svg";
 import Automatic from "/icons/automatic.svg";
 import Petrol from "/icons/petrol.svg";
 import Cup from "/icons/cup.svg";
+import { StyledLink } from "../../shared/Button/Button.styled";
 
 export default function Card({
   id,
@@ -46,12 +46,14 @@ export default function Card({
                 src="/icons/heart-red.svg"
                 alt="heart icon"
                 onClick={onToggleFavorite}
+                style={{ cursor: "pointer" }}
               />
             ) : (
               <img
                 src="/icons/heart.svg"
                 alt="heart icon"
                 onClick={onToggleFavorite}
+                style={{ cursor: "pointer" }}
               />
             )}
           </IconWrapper>
@@ -79,7 +81,9 @@ export default function Card({
           <Badges path={Wind} title="AC" />
         </BadgesList>
 
-        <StyledButton to={`${id}/features`}>Show more</StyledButton>
+        <StyledLink $width="166px" to={`${id}/features`}>
+          Show more
+        </StyledLink>
       </InfoWrapper>
     </CardWrapper>
   );

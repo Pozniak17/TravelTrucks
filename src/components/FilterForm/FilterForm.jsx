@@ -146,9 +146,7 @@ export default function FilterForm() {
           </li>
         </List>
 
-        <Button width="166px" buttonstyle={"general"}>
-          Search
-        </Button>
+        <Button width="166px">Search</Button>
       </StyledForm>
     </Formik>
   );

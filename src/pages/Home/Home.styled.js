@@ -40,32 +40,3 @@ export const Text = styled.h2`
   font-weight: 600;
   line-height: 32px; /* 133.333% */
 `;
-
-export const StyledLink = styled(Link)`
-  color: var(--White, #fff);
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: -0.08px;
-
-  display: flex;
-  width: 173px;
-  padding: 16px 0px;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 200px;
-  background-color: var(--Button, #e44848);
-  border: inherit;
-  cursor: pointer;
-  transition-property: background-color, border;
-  transition-duration: 300ms;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    background-color: var(--Button-Hover, #d84343);
-    border: "inherit";
-  }
-`;

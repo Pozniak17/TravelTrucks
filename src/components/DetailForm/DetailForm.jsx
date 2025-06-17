@@ -5,8 +5,9 @@ import {
   Text,
   Input,
   StyledForm,
-  StyledButton,
+  ButtonWrapper,
 } from "./DetailForm.styled";
+import { StyledButton } from "../shared/Button/Button.styled";
 
 export default function DetailForm() {
   const handleSubmit = (values, actions) => {
@@ -31,7 +32,11 @@ export default function DetailForm() {
 
           <Input as="textarea" placeholder="Comment" name="message" />
 
-          <StyledButton type="submit">Send</StyledButton>
+          <ButtonWrapper>
+            <StyledButton $width="166px" type="submit">
+              Send
+            </StyledButton>
+          </ButtonWrapper>
         </StyledForm>
       </Formik>
     </Wrapper>

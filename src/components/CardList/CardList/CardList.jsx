@@ -1,14 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
-import { Button, List } from "./CardList.styled";
+import { List, ButtonWrapper } from "./CardList.styled";
 import { toggleFavorite } from "../../../redux/favoritesSlice";
+import { StyledButton } from "../../shared/Button/Button.styled";
 
 export default function CardList({ nextPage }) {
   const { items, total } = useSelector((state) => state.campers);
   const dispatch = useDispatch();
-
-  // console.log("items:", campers.length);
-  // console.log("total:", total);
   const favorites = useSelector((state) => state.favorites.items);
 
   const handleToggleFavorite = (car) => {
@@ -29,7 +27,15 @@ export default function CardList({ nextPage }) {
       </List>
 
       {items.length < total && (
-        <Button onClick={() => nextPage()}>Load more</Button>
+        <ButtonWrapper>
+          <StyledButton
+            $buttonstyle="secondary"
+            $width="145px"
+            onClick={() => nextPage()}
+          >
+            Load more
+          </StyledButton>
+        </ButtonWrapper>
       )}
     </div>
   );

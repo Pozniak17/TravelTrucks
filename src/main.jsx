@@ -7,13 +7,17 @@ import { PersistGate } from "redux-persist/integration/react";
 import App from "./App.jsx";
 import "modern-normalize";
 import "./index.css";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./components/utils/theme.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-          <App />
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
         </BrowserRouter>
       </PersistGate>
     </Provider>

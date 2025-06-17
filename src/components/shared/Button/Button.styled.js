@@ -1,46 +1,56 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import styled, { css } from "styled-components";
 
-// const isGeneral = (props) => props.variant === "general";
+const buttonVariants = {
+  primary: css`
+    color: ${(props) => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors.button};
+    border: inherit;
+    &:hover,
+    &:focus {
+      background-color: ${(props) => props.theme.colors.buttonHover};
+      border: inherit;
+    }
+  `,
+  secondary: css`
+    color: ${(props) => props.theme.colors.main};
+    background-color: ${(props) => props.theme.colors.white};
+    border: 1px solid ${(props) => props.theme.colors.grayLight};
+    &:hover,
+    &:focus {
+      background-color: inherit;
+      border: 1px solid ${(props) => props.theme.colors.buttonHover};
+    }
+  `,
+};
 
-export const StyledButton = styled.button`
-  color: ${(props) =>
-    props.$buttonstyle === "general"
-      ? "var(--White, #fff)"
-      : "var(--Main, #101828)"};
+export const commonStyles = css`
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.08px;
 
+  text-decoration: none;
   display: flex;
   width: ${(props) => props.width};
   padding: 16px 0px;
   justify-content: center;
   align-items: center;
-
   border-radius: 200px;
-  background-color: ${(props) =>
-    props.$buttonstyle === "general"
-      ? "var(--Button, #e44848)"
-      : "var(--White, #FFF)"};
-  border: ${(props) =>
-    props.$buttonstyle === "general"
-      ? "inherit"
-      : "1px solid var(--Gray-light, #DADDE1)"};
   cursor: pointer;
+  width: ${({ $width }) => $width || "auto"};
   transition-property: background-color, border;
   transition-duration: 300ms;
 
-  &:hover,
-  &:focus {
-    background-color: ${(props) =>
-      props.$buttonstyle === "general"
-        ? "var(--Button-Hover, #d84343)"
-        : "inherit"};
-    border: ${(props) =>
-      props.$buttonstyle === "general"
-        ? "inherit"
-        : "1px solid var(--Button-Hover, #D84343);"};
-  }
+  ${({ $buttonstyle }) =>
+    buttonVariants[$buttonstyle] || buttonVariants.primary}
+`;
+
+export const StyledButton = styled.button`
+  ${commonStyles}
+`;
+
+export const StyledLink = styled(Link)`
+  ${commonStyles}
 `;
