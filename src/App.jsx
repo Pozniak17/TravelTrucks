@@ -7,6 +7,7 @@ import CamperDetails from "./pages/CamperDetails/CamperDetails";
 import Features from "./components/Features/Features";
 import Reviews from "./components/Reviews/Reviews";
 import Favorites from "./pages/Favorites/Favorites";
+import ScrollToTop from "./components/shared/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ScrollToTop />
     </>
   );
 }
