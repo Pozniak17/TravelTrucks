@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/operations.js";
 import { Loader } from "../../components/Loader/Loader.jsx";
 import Error from "../../components/Error/Error.jsx";
+import { clearFilters, setFilter } from "../../redux/filtersSlice.js";
 
 export default function Catalog() {
   const dispatch = useDispatch();
   const campers = useSelector((state) => state.campers.items);
   const { isLoading, error } = useSelector((state) => state.campers);
   const filters = useSelector((state) => state.filters);
-
   const [limit, setLimit] = useState(4);
 
   useEffect(() => {
@@ -23,17 +23,37 @@ export default function Catalog() {
     setLimit((limit) => limit + 4);
   };
 
+  // логіка форми
+  const formHandleSubmit = (value, { resetForm }) => {
+    dispatch(clearFilters());
+
+    let filteredData = {};
+
+    for (const key in value) {
+      if (value[key] !== false && value[key] !== "") {
+        filteredData[key] = value[key];
+      }
+
+      if (value["transmission"] === true) {
+        filteredData["transmission"] = "automatic";
+      }
+    }
+
+    dispatch(setFilter(filteredData));
+    resetForm();
+
+    console.log(filteredData);
+  };
+
   return (
     <Container>
       {isLoading && <Loader />}
-      <FilterForm />
+      <FilterForm onSubmit={formHandleSubmit} />
       {error || campers.length === 0 ? (
         <Error />
       ) : (
         <CardList nextPage={loadMore} />
       )}
-      {/* {error && <Error />}
-      {campers.length > 0 && <CardList nextPage={loadMore} />} */}
     </Container>
   );
 }

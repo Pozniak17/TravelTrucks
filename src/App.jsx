@@ -1,17 +1,21 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Catalog from "./pages/Catalog/Catalog";
-import NotFound from "./pages/NotFound/NotFound";
+import { lazy, Suspense } from "react";
+
 import AppBar from "./components/AppBar/AppBar";
-import CamperDetails from "./pages/CamperDetails/CamperDetails";
-import Features from "./components/Features/Features";
-import Reviews from "./components/Reviews/Reviews";
-import Favorites from "./pages/Favorites/Favorites";
 import ScrollToTop from "./components/shared/ScrollToTop/ScrollToTop";
+import { Loader } from "./components/Loader/Loader";
+
+const Home = lazy(() => import("./pages/Home/Home"));
+const Catalog = lazy(() => import("./pages/Catalog/Catalog"));
+const Favorites = lazy(() => import("./pages/Favorites/Favorites"));
+const CamperDetails = lazy(() => import("./pages/CamperDetails/CamperDetails"));
+const Features = lazy(() => import("./components/Features/Features"));
+const Reviews = lazy(() => import("./components/Reviews/Reviews"));
+const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 function App() {
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <AppBar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,7 +28,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ScrollToTop />
-    </>
+    </Suspense>
   );
 }
 

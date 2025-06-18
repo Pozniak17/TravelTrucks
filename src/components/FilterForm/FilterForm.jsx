@@ -18,8 +18,6 @@ import Cup from "/icons/cup.svg";
 import TV from "/icons/tv.svg";
 import Shower from "/icons/shower.svg";
 import Button from "../shared/Button/Button";
-import { clearFilters, setFilter } from "../../redux/filtersSlice";
-import { useDispatch } from "react-redux";
 
 const initialValues = {
   location: "",
@@ -31,34 +29,11 @@ const initialValues = {
   form: "",
 };
 
-export default function FilterForm() {
-  const dispatch = useDispatch();
+export default function FilterForm({ onSubmit }) {
   const locationFieldId = useId();
 
-  const handleSubmit = (value, { resetForm }) => {
-    dispatch(clearFilters());
-
-    let filteredData = {};
-
-    for (const key in value) {
-      if (value[key] !== false && value[key] !== "") {
-        filteredData[key] = value[key];
-      }
-
-      if (value["transmission"] === true) {
-        filteredData["transmission"] = "automatic";
-      }
-    }
-
-    dispatch(setFilter(filteredData));
-
-    resetForm();
-
-    console.log(filteredData);
-  };
-
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <StyledForm>
         <Wrapper>
           <Label htmlFor={locationFieldId}>Location</Label>

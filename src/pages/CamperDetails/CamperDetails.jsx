@@ -1,5 +1,5 @@
+import { Suspense, useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import axios from "axios";
 import {
@@ -19,6 +19,7 @@ import {
   DetailsWrapper,
 } from "./CamperDetails.styled";
 import DetailForm from "../../components/DetailForm/DetailForm";
+import { Loader } from "../../components/Loader/Loader";
 
 export default function CamperDetails() {
   const [details, setDetails] = useState([]);
@@ -74,6 +75,7 @@ export default function CamperDetails() {
         </TabList>
         <Divider />
 
+        <Suspense fallback={<Loader />} />
         <DetailsWrapper>
           <Outlet context={details} />
           <DetailForm />
