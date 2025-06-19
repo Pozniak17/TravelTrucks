@@ -34,7 +34,7 @@ const FeedbackSchema = Yup.object().shape({
 export default function DetailForm() {
   const handleSubmit = (values, actions) => {
     console.log(values);
-    toast.success("✅ Successfully submitted!");
+    toast.success("Successfully submitted!");
     actions.resetForm();
   };
   return (

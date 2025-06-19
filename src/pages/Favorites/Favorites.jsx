@@ -4,6 +4,7 @@ import { List } from "../../components/CardList/CardList/CardList.styled";
 import { toggleFavorite } from "../../redux/favoritesSlice";
 import FilterForm from "../../components/FilterForm/FilterForm";
 import Container from "../../components/shared/Container/Container";
+import { Wrapper } from "./Favorites.styled";
 
 export default function Favorites() {
   const favoriteItems = useSelector((state) => state.favorites.items);
@@ -15,8 +16,7 @@ export default function Favorites() {
   };
 
   return (
-    <Container color="thistle" justifyContent="center">
-      {/* <FilterForm /> */}
+    <Wrapper>
       <List>
         {favoriteItems.map((car) => (
           <Card
@@ -27,6 +27,6 @@ export default function Favorites() {
           />
         ))}
       </List>
-    </Container>
+    </Wrapper>
   );
 }
