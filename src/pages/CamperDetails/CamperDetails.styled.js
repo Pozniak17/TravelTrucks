@@ -25,12 +25,6 @@ export const ReviewsWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
 `;
 
 export const LocationWrapper = styled.div`

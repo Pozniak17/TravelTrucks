@@ -73,7 +73,7 @@ export default function Card({
           </Wrapper>
         </DetailsWrapper>
 
-        <SupportText>{description.slice(0, 65)}...</SupportText>
+        <SupportText>{description.slice(0, 60)}...</SupportText>
         <BadgesList>
           <Badges path={Automatic} title="Automatic" />
           <Badges path={Petrol} title="Petrol" />
@@ -81,7 +81,7 @@ export default function Card({
           <Badges path={Wind} title="AC" />
         </BadgesList>
 
-        <StyledLink $width="166px" to={`${id}/features`}>
+        <StyledLink $width="166px" to={`/catalog/${id}/features`}>
           Show more
         </StyledLink>
       </InfoWrapper>
