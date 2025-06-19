@@ -1,4 +1,4 @@
-import { Field, Form } from "formik";
+import { ErrorMessage, Field, Form } from "formik";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -43,11 +43,27 @@ export const Input = styled(Field)`
   background: var(--Inputs, #f7f7f7);
   border: inherit;
   margin-bottom: 14px;
+`;
 
-  &:nth-last-child(2) {
-    margin-bottom: 0;
-    height: 118px;
-  }
+export const Textarea = styled(Field)`
+  width: 527px;
+  height: 118px;
+  border-radius: 10px;
+  background: var(--Inputs, #f7f7f7);
+  border: none;
+  padding: 18px 18px;
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+`;
+
+export const Error = styled(ErrorMessage)`
+  position: absolute;
+  top: ${(props) => (props.last ? "113px" : "56px")};
+  left: 16px;
+  font-size: 14px;
+  color: green;
 `;
 
 export const ButtonWrapper = styled.div`

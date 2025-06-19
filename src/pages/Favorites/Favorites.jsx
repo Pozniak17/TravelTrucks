@@ -13,9 +13,10 @@ export default function Favorites() {
   const handleToggleFavorite = (car) => {
     dispatch(toggleFavorite(car));
   };
+
   return (
-    <Container>
-      <FilterForm />
+    <Container color="thistle" justifyContent="center">
+      {/* <FilterForm /> */}
       <List>
         {favoriteItems.map((car) => (
           <Card
@@ -26,10 +27,6 @@ export default function Favorites() {
           />
         ))}
       </List>
-
-      {/* {favoriteItems.length < total && (
-        <Button onClick={() => nextPage()}>Load more</Button>
-      )} */}
     </Container>
   );
 }
