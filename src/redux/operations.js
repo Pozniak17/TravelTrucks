@@ -1,10 +1,9 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-// Встановлюємо базову URL-адресу
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
-// Симулюємо затримку (наприклад, 1500 мс)
+// Симулюємо затримку
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const fetchCampers = createAsyncThunk(
@@ -21,7 +20,7 @@ export const fetchCampers = createAsyncThunk(
         },
       });
 
-      await delay(500); // Штучна затримка перед поверненням даних
+      await delay(500); // затримка
 
       return response.data;
     } catch (error) {

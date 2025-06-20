@@ -19,6 +19,11 @@ export default function Catalog() {
     dispatch(fetchCampers({ limit, filters }));
   }, [dispatch, limit, filters]);
 
+  // скидаю ліміт, при зміні фільтра
+  useEffect(() => {
+    setLimit(4);
+  }, [filters]);
+
   const loadMore = () => {
     setLimit((limit) => limit + 4);
   };
