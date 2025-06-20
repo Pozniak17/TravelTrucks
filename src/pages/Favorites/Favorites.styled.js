@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* додано */
   background: linear-gradient(to bottom, thistle, plum, darkslateblue);
 
   min-height: 100vh;

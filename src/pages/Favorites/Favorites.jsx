@@ -3,7 +3,7 @@ import Card from "../../components/CardList/Card/Card";
 import { List } from "../../components/CardList/CardList/CardList.styled";
 import { toggleFavorite } from "../../redux/favoritesSlice";
 import { Button, Wrapper } from "./Favorites.styled";
-// import { Link } from "react-router-dom";
+
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Favorites() {
@@ -33,9 +33,10 @@ export default function Favorites() {
           <h1>No Favorites Yet</h1>
           <p>You haven’t added any cars to your favorites.</p>
           <DotLottieReact
-            src="https://lottie.host/d400fd10-c4b5-4d59-b3d7-6184c4cad222/E0Aqmxkg85.lottie"
+            src="https://lottie.host/1bb01189-f87c-493f-8b15-5574fd1bf10f/UnjIOQCkKl.lottie"
             loop
             autoplay
+            style={{ width: "672px", height: "336px" }}
           />
           <p>
             Browse the <Button to="/catalog">Catalog</Button> and tap the heart
