@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CardList from "../../components/CardList/CardList/CardList.jsx";
 import FilterForm from "../../components/FilterForm/FilterForm.jsx";
-import Container from "../../components/shared/Container/Container";
+import Container from "../../components/shared/Container/Container.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/operations.js";
 import { Loader } from "../../components/Loader/Loader.jsx";
