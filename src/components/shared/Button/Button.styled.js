@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+// type StyledButtonProps = {
+//   $buttonstyle: string;
+//   $width: string;
+// };
+
 const buttonVariants = {
   primary: css`
     color: ${(props) => props.theme.colors.white};

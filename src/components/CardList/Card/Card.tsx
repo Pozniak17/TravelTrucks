@@ -18,6 +18,7 @@ import Automatic from "/icons/automatic.svg";
 import Petrol from "/icons/petrol.svg";
 import Cup from "/icons/cup.svg";
 import { StyledLink } from "../../shared/Button/Button.styled";
+import { CardProps } from "../../../types/Card.types";
 
 export default function Card({
   id,
@@ -30,7 +31,7 @@ export default function Card({
   description,
   isFavorite,
   onToggleFavorite,
-}) {
+}: CardProps) {
   return (
     <CardWrapper>
       <Img src={gallery[0].thumb} alt="camper picture" />

@@ -18,8 +18,9 @@ import Cup from "/icons/cup.svg";
 import TV from "/icons/tv.svg";
 import Shower from "/icons/shower.svg";
 import Button from "../shared/Button/Button";
+import { FilterValues } from "../../types/Form.types";
 
-const initialValues = {
+const initialValues: FilterValues = {
   location: "",
   AC: false,
   transmission: "",

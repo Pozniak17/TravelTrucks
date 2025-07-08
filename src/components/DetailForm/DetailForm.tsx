@@ -1,4 +1,4 @@
-import { Field, Formik } from "formik";
+import { Field, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -13,7 +13,14 @@ import {
   Error,
   Textarea,
 } from "./DetailForm.styled";
-import { StyledButton } from "../shared/Button/Button.styled";
+import Button from "../shared/Button/Button";
+
+interface Values {
+  username: string;
+  email: string;
+  date: string;
+  message: string;
+}
 
 const FeedbackSchema = Yup.object().shape({
   username: Yup.string()
@@ -32,7 +39,7 @@ const FeedbackSchema = Yup.object().shape({
 });
 
 export default function DetailForm() {
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = (values: Values, actions: FormikHelpers<Values>) => {
     console.log(values);
     toast.success("Successfully submitted!");
     actions.resetForm();
@@ -42,6 +49,7 @@ export default function DetailForm() {
       <Title>Book your campervan now</Title>
 
       <Text>Stay connected! We are always ready to help you.</Text>
+
       <Formik
         initialValues={{ username: "", email: "", date: "", message: "" }}
         onSubmit={handleSubmit}
@@ -68,9 +76,9 @@ export default function DetailForm() {
             <Error name="message" component="span" last="true" />
           </InputWrapper>
           <ButtonWrapper>
-            <StyledButton $width="166px" type="submit">
+            <Button width="166px" type="submit">
               Send
-            </StyledButton>
+            </Button>
           </ButtonWrapper>
         </StyledForm>
       </Formik>
