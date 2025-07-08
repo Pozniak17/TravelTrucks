@@ -1,6 +1,6 @@
 import { List } from "./Stars.styled";
 
-export default function Stars(number) {
+export default function Stars(number: number) {
   switch (number) {
     case 1:
       return (
