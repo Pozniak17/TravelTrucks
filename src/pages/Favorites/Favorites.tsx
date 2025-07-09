@@ -1,17 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
 import Card from "../../components/CardList/Card/Card";
 import { List } from "../../components/CardList/CardList/CardList.styled";
 import { toggleFavorite } from "../../redux/favoritesSlice";
 import { Button, Wrapper } from "./Favorites.styled";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useAppDispatch, useAppSelector } from "../../components/utils/hooks";
+import { CamperOptions } from "../../types/Card.types";
 
 export default function Favorites() {
-  const favoriteItems = useSelector((state) => state.favorites.items);
+  const favoriteItems = useAppSelector((state) => state.favorites.items);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const handleToggleFavorite = (car) => {
+  const handleToggleFavorite = (car: CamperOptions) => {
     dispatch(toggleFavorite(car));
   };
 

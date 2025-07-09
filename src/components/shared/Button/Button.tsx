@@ -2,9 +2,9 @@ import { MouseEventHandler } from "react";
 import { StyledButton } from "./Button.styled";
 
 type ButtonProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   width: number | string;
-  buttonstyle: "primary" | "secondary";
+  buttonstyle?: "primary" | "secondary";
   type?: "button" | "submit";
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };

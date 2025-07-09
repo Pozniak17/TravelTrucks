@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { Formik, Field } from "formik";
+import { Formik, Field, FormikHelpers } from "formik";
 import {
   StyledForm,
   Wrapper,
@@ -20,6 +20,13 @@ import Shower from "/icons/shower.svg";
 import Button from "../shared/Button/Button";
 import { FilterValues } from "../../types/Form.types";
 
+export type FilterFormProps = {
+  onSubmit: (
+    values: FilterValues,
+    formikHelpers: FormikHelpers<FilterValues>
+  ) => void;
+};
+
 const initialValues: FilterValues = {
   location: "",
   AC: false,
@@ -30,7 +37,7 @@ const initialValues: FilterValues = {
   form: "",
 };
 
-export default function FilterForm({ onSubmit }) {
+export default function FilterForm({ onSubmit }: FilterFormProps) {
   const locationFieldId = useId();
 
   return (
