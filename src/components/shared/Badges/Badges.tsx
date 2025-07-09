@@ -1,10 +1,10 @@
 import { Wrapper, Img, Text } from "./Badges.styled";
 
-type BadgesProps = {
-  color: string;
+interface BadgesProps {
+  color?: string;
   path: string;
   title: string;
-};
+}
 
 export default function Badges({
   color = "var(--Badges, #F2F4F7);",

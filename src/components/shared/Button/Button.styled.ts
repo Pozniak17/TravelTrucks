@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-// type StyledButtonProps = {
-//   $buttonstyle: string;
-//   $width: string;
-// };
+type StyledButtonProps = {
+  $buttonstyle: "primary" | "secondary";
+  $width: string | number;
+};
 
 const buttonVariants = {
   primary: css`
@@ -29,7 +29,7 @@ const buttonVariants = {
   `,
 };
 
-export const commonStyles = css`
+export const commonStyles = css<StyledButtonProps>`
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
@@ -38,7 +38,7 @@ export const commonStyles = css`
 
   text-decoration: none;
   display: flex;
-  width: ${(props) => props.width};
+  width: ${(props) => props.$width};
   padding: 16px 0px;
   justify-content: center;
   align-items: center;
@@ -52,10 +52,10 @@ export const commonStyles = css`
     buttonVariants[$buttonstyle] || buttonVariants.primary}
 `;
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<StyledButtonProps>`
   ${commonStyles}
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<StyledButtonProps>`
   ${commonStyles}
 `;

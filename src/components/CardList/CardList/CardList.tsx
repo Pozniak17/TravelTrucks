@@ -1,10 +1,10 @@
 import Card from "../Card/Card";
 import { List, ButtonWrapper } from "./CardList.styled";
 import { toggleFavorite } from "../../../redux/favoritesSlice";
-import Button from "../../shared/Button/Button";
 import { CamperOptions, CardListProps } from "../../../types/Card.types";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import { RootState } from "../../../redux/store";
+import Button from "../../shared/Button/Button";
 
 export default function CardList({ nextPage }: CardListProps) {
   const dispatch = useAppDispatch();
@@ -32,8 +32,8 @@ export default function CardList({ nextPage }: CardListProps) {
       {items.length < total && (
         <ButtonWrapper>
           <Button
-            $buttonstyle="secondary"
-            $width="145px"
+            buttonstyle="secondary"
+            width="145px"
             onClick={() => nextPage()}
           >
             Load more

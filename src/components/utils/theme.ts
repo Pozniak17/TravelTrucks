@@ -47,7 +47,7 @@ export const theme = {
     round: "50%",
   }, // це для margin, padding
   // spacing: 4,
-  spacing: (value) => `${4 * value}px`,
+  spacing: (value: number) => `${4 * value}px`,
 
   shadows: {
     standart: "10px 10px 8px 2px rgba(0, 0, 0, 0.3)",
