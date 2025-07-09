@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 type StyledButtonProps = {
-  $buttonstyle: "primary" | "secondary";
+  $buttonstyle?: "primary" | "secondary";
   $width: string | number;
 };
 
@@ -48,7 +48,7 @@ export const commonStyles = css<StyledButtonProps>`
   transition-property: background-color, border;
   transition-duration: 300ms;
 
-  ${({ $buttonstyle }) =>
+  ${({ $buttonstyle = "primary" }) =>
     buttonVariants[$buttonstyle] || buttonVariants.primary}
 `;
 

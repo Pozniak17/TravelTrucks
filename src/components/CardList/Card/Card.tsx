@@ -17,8 +17,8 @@ import Wind from "/icons/wind.svg";
 import Automatic from "/icons/automatic.svg";
 import Petrol from "/icons/petrol.svg";
 import Cup from "/icons/cup.svg";
-import { StyledLink } from "../../shared/Button/Button.styled";
 import { CardProps } from "../../../types/Card.types";
+import { StyledLink } from "../../shared/Button/Button.styled";
 
 export default function Card({
   id,

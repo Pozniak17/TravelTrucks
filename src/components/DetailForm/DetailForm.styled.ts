@@ -1,6 +1,10 @@
 import { ErrorMessage, Field, Form } from "formik";
 import styled from "styled-components";
 
+interface Last {
+  last?: string;
+}
+
 export const Wrapper = styled.div`
   margin-top: 44px;
   width: 641px;
@@ -58,7 +62,7 @@ export const InputWrapper = styled.div`
   position: relative;
 `;
 
-export const Error = styled(ErrorMessage)`
+export const Error = styled(ErrorMessage)<Last>`
   position: absolute;
   top: ${(props) => (props.last ? "113px" : "56px")};
   left: 16px;
