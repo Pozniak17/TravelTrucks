@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Camper } from "../types/Card.types";
+import { CamperOptions } from "../types/Card.types";
 
 interface FavoriteState {
-  items: Camper[];
+  items: CamperOptions[];
 }
 
 const initialState: FavoriteState = {
@@ -13,7 +13,8 @@ const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
-    toggleFavorite: (state, action: PayloadAction<Camper>) => {
+    toggleFavorite: (state, action: PayloadAction<CamperOptions>) => {
+      console.log(action.payload);
       const exist = state.items.find((item) => item.id === action.payload.id);
       if (exist) {
         state.items = state.items.filter(

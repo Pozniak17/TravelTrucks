@@ -2,9 +2,10 @@ import { useOutletContext } from "react-router-dom";
 import { Divider } from "../FilterForm/FilterForm.styled";
 import Badges from "../shared/Badges/Badges";
 import { Wrapper, List, DetailsList, Item } from "./Features.styled";
+import { CamperOptions } from "../../types/Card.types";
 
 export default function Features() {
-  const camperData = useOutletContext();
+  const details = useOutletContext<CamperOptions>();
 
   return (
     <Wrapper>
@@ -22,27 +23,27 @@ export default function Features() {
       <DetailsList>
         <Item>
           <span>Form</span>
-          <span>{camperData.form}</span>
+          <span>{details.form}</span>
         </Item>
         <Item>
           <span>Length</span>
-          <span>{camperData.length}</span>
+          <span>{details.length}</span>
         </Item>
         <Item>
           <span>Width</span>
-          <span>{camperData.width}</span>
+          <span>{details.width}</span>
         </Item>
         <Item>
           <span>Height</span>
-          <span>{camperData.height}</span>
+          <span>{details.height}</span>
         </Item>
         <Item>
           <span>Tank</span>
-          <span>{camperData.tank}</span>
+          <span>{details.tank}</span>
         </Item>
         <Item>
           <span>Consumption</span>
-          <span>{camperData.consumption}</span>
+          <span>{details.consumption}</span>
         </Item>
       </DetailsList>
     </Wrapper>

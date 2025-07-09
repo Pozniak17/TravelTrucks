@@ -2,7 +2,7 @@ export type CardListProps = {
   nextPage: () => void;
 };
 
-export interface Camper {
+export interface CamperOptions {
   id: string;
   name: string;
   price: number;
@@ -33,7 +33,7 @@ export interface Camper {
 }
 
 // CardProps — розширює Camper
-export interface CardProps extends Camper {
+export interface CardProps extends CamperOptions {
   isFavorite: boolean;
   onToggleFavorite: () => void;
 }

@@ -20,9 +20,11 @@ import {
 } from "./CamperDetails.styled";
 import DetailForm from "../../components/DetailForm/DetailForm";
 import { Loader } from "../../components/Loader/Loader";
+import { CamperOptions } from "../../types/Card.types";
 
 export default function CamperDetails() {
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState<CamperOptions | null>(null);
+  console.log(details);
   const { id } = useParams();
 
   useEffect(() => {
@@ -36,6 +38,10 @@ export default function CamperDetails() {
 
     fetchCamperDetails();
   }, [id]);
+
+  if (!details) {
+    return <Loader />;
+  }
 
   return (
     <StyledContainer>

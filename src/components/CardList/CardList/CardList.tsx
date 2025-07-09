@@ -2,7 +2,7 @@ import Card from "../Card/Card";
 import { List, ButtonWrapper } from "./CardList.styled";
 import { toggleFavorite } from "../../../redux/favoritesSlice";
 import Button from "../../shared/Button/Button";
-import { Camper, CardListProps } from "../../../types/Card.types";
+import { CamperOptions, CardListProps } from "../../../types/Card.types";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import { RootState } from "../../../redux/store";
 
@@ -11,7 +11,7 @@ export default function CardList({ nextPage }: CardListProps) {
   const { items, total } = useAppSelector((state: RootState) => state.campers);
   const favorites = useAppSelector((state: RootState) => state.favorites.items);
 
-  const handleToggleFavorite = (car: Camper) => {
+  const handleToggleFavorite = (car: CamperOptions) => {
     dispatch(toggleFavorite(car));
   };
 
@@ -19,7 +19,7 @@ export default function CardList({ nextPage }: CardListProps) {
     <div>
       <List>
         {Array.isArray(items) &&
-          items.map((car: Camper) => (
+          items.map((car: CamperOptions) => (
             <Card
               key={car.id}
               {...car}

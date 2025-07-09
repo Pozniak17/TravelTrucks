@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchCampers, FetchCampersResponse } from "./operations";
-import { Camper } from "../types/Card.types";
+import { CamperOptions } from "../types/Card.types";
 
 interface CampersState {
-  items: Camper[];
+  items: CamperOptions[];
   isLoading: boolean;
   error: string | null;
   total: number;

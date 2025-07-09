@@ -9,14 +9,15 @@ import {
   Wrapper,
 } from "./Reviews.styled";
 import Stars from "../shared/Stars/Stars";
+import { CamperOptions } from "../../types/Card.types";
 
 export default function Reviews() {
-  const camperData = useOutletContext();
+  const details = useOutletContext<CamperOptions>();
 
   return (
     <Wrapper>
       <Block>
-        {camperData.reviews?.map((feedback, index) => (
+        {details.reviews?.map((feedback, index) => (
           <Item key={index}>
             <PersonWrapper>
               <Circle>
