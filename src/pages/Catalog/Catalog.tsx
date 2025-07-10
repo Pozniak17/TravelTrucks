@@ -68,15 +68,17 @@ export default function Catalog() {
     console.log(filteredData);
   };
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (error || campers.length === 0) {
+    return <Error />;
+  }
   return (
     <Container>
-      {isLoading && <Loader />}
       <FilterForm onSubmit={formHandleSubmit} />
-      {error || campers.length === 0 ? (
-        <Error />
-      ) : (
-        <CardList nextPage={loadMore} />
-      )}
+      <CardList nextPage={loadMore} />
     </Container>
   );
 }
