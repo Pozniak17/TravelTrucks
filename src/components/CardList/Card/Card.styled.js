@@ -57,13 +57,30 @@ export const Wrapper = styled.div`
   gap: 4px;
 `;
 
-export const Text = styled.p`
+export const TextFirst = styled.p`
   color: var(--Main, #101828);
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
+
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  cursor: pointer;
+`;
+
+export const TextLast = styled.p`
+  color: var(--Main, #101828);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 `;
 
 export const SupportText = styled.p`
@@ -76,7 +93,7 @@ export const SupportText = styled.p`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
 `;
 
 export const BadgesList = styled.ul`

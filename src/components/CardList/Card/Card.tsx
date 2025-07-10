@@ -7,10 +7,11 @@ import {
   IconWrapper,
   DetailsWrapper,
   Wrapper,
-  Text,
   SupportText,
   InfoWrapper,
   BadgesList,
+  TextFirst,
+  TextLast,
 } from "./Card.styled";
 
 import Wind from "/icons/wind.svg";
@@ -19,6 +20,7 @@ import Petrol from "/icons/petrol.svg";
 import Cup from "/icons/cup.svg";
 import { CardProps } from "../../../types/Card.types";
 import { StyledLink } from "../../shared/Button/Button.styled";
+import { useNavigate } from "react-router-dom";
 
 export default function Card({
   id,
@@ -32,6 +34,7 @@ export default function Card({
   isFavorite,
   onToggleFavorite,
 }: CardProps) {
+  const navigate = useNavigate();
   return (
     <CardWrapper>
       <Img src={gallery[0].thumb} alt="camper picture" />
@@ -63,14 +66,14 @@ export default function Card({
         <DetailsWrapper>
           <Wrapper>
             <img src="/icons/star.svg" alt="star icon" />
-            <Text>
+            <TextFirst onClick={() => navigate(`/catalog/${id}/reviews`)}>
               {rating}({reviews.length} Reviews)
-            </Text>
+            </TextFirst>
           </Wrapper>
 
           <Wrapper>
             <img src="/icons/map2.svg" alt="map icon" />
-            <Text>{location}</Text>
+            <TextLast>{location}</TextLast>
           </Wrapper>
         </DetailsWrapper>
 
@@ -82,7 +85,7 @@ export default function Card({
           <Badges path={Wind} title="AC" />
         </BadgesList>
 
-        <StyledLink $width="166px" to={`/catalog/${id}/features`}>
+        <StyledLink to={`/catalog/${id}`} $width="166px">
           Show more
         </StyledLink>
       </InfoWrapper>

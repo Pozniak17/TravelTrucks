@@ -49,7 +49,7 @@ export default function CamperDetails() {
       <Wrapper>
         <ReviewsWrapper>
           <img src="/icons/star.svg" alt="star icon" />
-          <p>{details.rating}(2Reviews)</p>
+          <p>{details.rating}(2 Reviews)</p>
         </ReviewsWrapper>
 
         <LocationWrapper>

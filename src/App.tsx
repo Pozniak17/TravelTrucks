@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import AppBar from "./components/AppBar/AppBar";
@@ -22,6 +22,7 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/catalog/:id" element={<CamperDetails />}>
+          <Route index element={<Navigate to="features" replace />} />
           <Route path="features" element={<Features />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
