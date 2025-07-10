@@ -1,9 +1,12 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { lazy, Suspense, useEffect } from "react";
 
 import AppBar from "./components/AppBar/AppBar";
 import ScrollToTop from "./components/shared/ScrollToTop/ScrollToTop";
 import { Loader } from "./components/Loader/Loader";
+import { useAppDispatch } from "./components/utils/hooks";
+import { clearFilters } from "./redux/filtersSlice";
+import { useDispatch } from "react-redux";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Catalog = lazy(() => import("./pages/Catalog/Catalog"));
@@ -14,6 +17,12 @@ const Reviews = lazy(() => import("./components/Reviews/Reviews"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 function App() {
+  const location = useLocation();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(clearFilters());
+  }, [location.pathname, useAppDispatch]);
+
   return (
     <Suspense fallback={<Loader />}>
       <AppBar />
