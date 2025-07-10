@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 type StyledButtonProps = {
   $buttonstyle?: "primary" | "secondary";
   $width: string | number;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const buttonVariants = {
