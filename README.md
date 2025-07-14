@@ -15,7 +15,7 @@ The project is built using **React**, **Redux**, and **TypeScript**, demonstrati
 
 ## Demo
 
-👉 [View Live Demo](https://your-demo-link.com) <!-- Replace with actual link if available -->
+👉 [View Live Demo](https://travel-trucks-ua.vercel.app/) <!-- Replace with actual link if available -->
 
 ## Technologies Used
 
