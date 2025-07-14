@@ -44,11 +44,8 @@ src/
 ├── assets/        # Images and icons
 └── App.tsx
 
-## Installation
-
-
-
 ```
+## Installation
 1. **Clone the repository**
    
 ```git clone https://github.com/Pozniak17/TravelTrucks.git```
