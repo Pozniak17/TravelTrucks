@@ -1,12 +1,63 @@
-# React + Vite
+# TravelTrucks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+**TravelTrucks** is a camper rental application that allows users to:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🚌 Browse a catalog of campers
+- 🔍 Filter campers by parameters such as location, price, and equipment
+- ❤️ Add campers to a favorites list
+- 📄 View detailed camper pages with photos and specifications
+- 🌟 Read customer reviews
+- 📝 Submit a booking request via a built-in form
 
-## Expanding the ESLint configuration
+The project is built using **React**, **Redux**, and **TypeScript**, demonstrating scalable architecture, reusable UI components, and predictable state management.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Demo
+
+👉 [View Live Demo](https://travel-trucks-ua.vercel.app/) <!-- Replace with actual link if available -->
+
+## Technologies Used
+
+[![React](https://img.shields.io/badge/-React-61DBFB?style=flat&logo=react&logoColor=white)](#)
+[![Redux](https://img.shields.io/badge/-Redux-764ABC?style=flat&logo=redux&logoColor=white)](#)
+[![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](#)
+[![Styled Components](https://img.shields.io/badge/-Styled--Components-DB7093?style=flat&logo=styled-components&logoColor=white)](#)
+
+## Features
+
+- 🔍 Camper catalog with filtering options
+- ❤️ Add/remove campers from favorites
+- 📄 Camper detail pages with full specifications
+- 🌟 Review section with ratings and comments
+- 📝 Booking form with input validation
+- 🌐 Responsive layout for mobile and desktop
+
+## Project Structure
+
+```plaintext
+src/
+├── components/    # Reusable UI components (Buttons, Modals, Cards)
+├── pages/         # Page-level components (Catalog, CamperDetails, Favorites, Home, NotFound)
+├── redux/         # Redux store and slices
+├── types/         # Global TypeScript types and interfaces
+├── assets/        # Images and icons
+└── App.tsx
+
+```
+## Installation
+1. **Clone the repository**
+   
+```git clone https://github.com/Pozniak17/TravelTrucks.git```
+
+
+```cd TravelTrucks```
+
+
+2. **Install dependencies**
+   
+```npm install```
+
+3. **Run the app locally**
+   
+```npm run dev```
