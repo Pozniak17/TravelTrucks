@@ -15,6 +15,7 @@ export const CardWrapper = styled.li`
 export const Img = styled.img`
   width: 292px;
   height: 320px;
+  object-position: 65% center;
   border-radius: 10px;
   object-fit: cover;
 `;

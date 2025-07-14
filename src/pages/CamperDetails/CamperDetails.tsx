@@ -1,3 +1,6 @@
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { SlideImage } from "yet-another-react-lightbox";
 import { Suspense, useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
 
@@ -24,6 +27,9 @@ import { CamperOptions } from "../../types/Card.types";
 
 export default function CamperDetails() {
   const [details, setDetails] = useState<CamperOptions | null>(null);
+  const [open, setOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   console.log(details);
   const { id } = useParams();
 
@@ -43,6 +49,10 @@ export default function CamperDetails() {
     return <Loader />;
   }
 
+  const slides: SlideImage[] = details.gallery.map((img) => ({
+    src: img.original,
+  }));
+
   return (
     <StyledContainer>
       <Title>{details.name}</Title>
@@ -61,12 +71,25 @@ export default function CamperDetails() {
       <PriceTitle>€{details.price}</PriceTitle>
 
       <ImgList>
-        {details?.gallery?.map((image) => (
-          <Item key={image.original}>
+        {details?.gallery?.map((image, index) => (
+          <Item
+            key={image.original}
+            onClick={() => {
+              setCurrentIndex(index);
+              setOpen(true);
+            }}
+          >
             <Img src={image.original} alt="Camper photo" />
           </Item>
         ))}
       </ImgList>
+
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={slides}
+        index={currentIndex}
+      />
 
       <Description>{details.description}</Description>
 

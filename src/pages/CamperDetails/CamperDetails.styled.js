@@ -74,6 +74,13 @@ export const Img = styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
+  object-position: 70% center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.2); /* збільшує на 5% */
+  }
 `;
 
 export const Description = styled.p`
