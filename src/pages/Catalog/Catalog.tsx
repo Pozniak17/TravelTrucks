@@ -68,17 +68,22 @@ export default function Catalog() {
     console.log(filteredData);
   };
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
-  if (error || campers.length === 0) {
-    return <Error />;
-  }
+  // if (error || campers.length === 0) {
+  //   return <Error />;
+  // }
   return (
     <Container>
+      {isLoading && <Loader />}
       <FilterForm onSubmit={formHandleSubmit} />
-      <CardList nextPage={loadMore} />
+      {!isLoading && error && <Error />}
+      {!isLoading && !error && campers.length > 0 && (
+        <CardList nextPage={loadMore} />
+      )}
+      {!isLoading && !error && campers.length === 0 && <Error />}
     </Container>
   );
 }
