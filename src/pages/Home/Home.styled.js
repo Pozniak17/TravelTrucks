@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Hero = styled.section`
-  width: 360px;
+  width: 100%;
   height: 254px;
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@ export const Text = styled.h2`
 `;
 
 export const Section = styled.section`
-  width: 360px;
+  width: 100%;
   height: 488px;
   padding: 47px 16px 143px 16px;
   background: linear-gradient(180deg, #080c09 0%, #000 100%);
@@ -81,4 +81,9 @@ export const Wrapper = styled.div`
     display: block;
     padding: 0 64px;
   }
+`;
+
+export const ButtonWrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
 `;

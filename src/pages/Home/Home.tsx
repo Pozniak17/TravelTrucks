@@ -1,5 +1,12 @@
 import { StyledLink } from "../../components/shared/Button/Button.styled";
-import { Hero, Title, Text, Section, Wrapper } from "./Home.styled";
+import {
+  Hero,
+  Title,
+  Text,
+  Section,
+  Wrapper,
+  // ButtonWrapper,
+} from "./Home.styled";
 
 export default function Home() {
   return (
@@ -18,9 +25,11 @@ export default function Home() {
       <Section>
         <Title>Campers of your dreams</Title>
         <Text>You can find everything you want in our catalog</Text>
+        {/* <ButtonWrapper> */}
         <StyledLink $buttonstyle="primary" $width="100%" to="/catalog">
           View Now
         </StyledLink>
+        {/* </ButtonWrapper> */}
       </Section>
     </>
   );

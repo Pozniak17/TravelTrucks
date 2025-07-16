@@ -14,7 +14,13 @@ export default function AppBar() {
 
       <MobileNav>
         <Link to="/favorites">
-          <img src="/icons/heart.svg" />
+          {({ isActive }) =>
+            isActive ? (
+              <img src="/icons/heart-red.svg" />
+            ) : (
+              <img src="/icons/heart.svg" />
+            )
+          }
         </Link>
         <img src="/icons/Menu.svg" />
       </MobileNav>
