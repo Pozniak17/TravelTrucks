@@ -6,17 +6,48 @@ export const Logo = styled(NavLink)`
 `;
 
 export const Header = styled.header`
-  padding: 24px 64px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid var(--Badges, #f2f4f7);
   background: var(--Inputs, #f7f7f7);
+  @media (min-width: 1440px) {
+    padding: 24px 64px;
+    justify-content: flex-start;
+  }
+`;
+
+export const Img = styled.img`
+  width: 102px;
+  height: 11px;
+
+  @media (min-width: 1440px) {
+    width: 136px;
+    height: 16px;
+  }
 `;
 
 export const Nav = styled.nav`
-  margin-left: 450px;
+  display: none;
+
+  @media (min-width: 1440px) {
+    margin-left: 450px;
+    display: flex;
+    gap: 32px;
+  }
+`;
+
+export const MobileNav = styled.nav`
   display: flex;
-  gap: 32px;
+  gap: 24px;
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const Link = styled(NavLink)`
