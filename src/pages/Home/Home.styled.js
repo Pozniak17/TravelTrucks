@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Hero = styled.section`
   width: 100%;
-  height: 254px;
+  aspect-ratio: 1440 / 696; /* або 2 / 1, або інше співвідношення, яке тобі потрібне */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,25 +19,23 @@ export const Hero = styled.section`
   @media (min-width: 744px) {
     background-image: url("/images/Home/Tablet/tablet-1x.jpg");
     width: 100%;
-    height: 600px;
+    aspect-ratio: 1440 / 600; /* або інше актуальне співвідношення */
   }
 
   @media (min-width: 744px) and (min-resolution: 192dpi) {
     background-image: url("/images/Home/Tablet/tablet-2x.jpg");
     width: 100%;
-    height: 600px;
   }
 
   @media (min-width: 1440px) {
     background-image: url("/images/Home/Desktop/desktop-1x.jpg");
     width: 100%;
-    height: 696px;
+    aspect-ratio: 1440 / 696;
   }
 
   @media (min-width: 1440px) and (min-resolution: 192dpi) {
     background-image: url("/images/Home/Desktop/desktop-2x.jpg");
     width: 100%;
-    height: 696px;
   }
 `;
 
