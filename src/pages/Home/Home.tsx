@@ -5,7 +5,8 @@ import {
   Text,
   Section,
   Wrapper,
-  // ButtonWrapper,
+  SecondWrapper,
+  ButtonWrapper,
 } from "./Home.styled";
 
 export default function Home() {
@@ -23,13 +24,15 @@ export default function Home() {
       </Hero>
 
       <Section>
-        <Title>Campers of your dreams</Title>
-        <Text>You can find everything you want in our catalog</Text>
-        {/* <ButtonWrapper> */}
-        <StyledLink $buttonstyle="primary" $width="100%" to="/catalog">
-          View Now
-        </StyledLink>
-        {/* </ButtonWrapper> */}
+        <SecondWrapper>
+          <Title>Campers of your dreams</Title>
+          <Text>You can find everything you want in our catalog</Text>
+          <ButtonWrapper>
+            <StyledLink $buttonstyle="primary" $width="100%" to="/catalog">
+              View Now
+            </StyledLink>
+          </ButtonWrapper>
+        </SecondWrapper>
       </Section>
     </>
   );

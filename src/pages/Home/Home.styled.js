@@ -16,16 +16,43 @@ export const Hero = styled.section`
     background-image: url("/images/Home/Mobile/mobile-2x.jpg");
   }
 
+  @media (min-width: 744px) {
+    background-image: url("/images/Home/Tablet/tablet-1x.jpg");
+    width: 100%;
+    height: 600px;
+  }
+
+  @media (min-width: 744px) and (min-resolution: 192dpi) {
+    background-image: url("/images/Home/Tablet/tablet-2x.jpg");
+    width: 100%;
+    height: 600px;
+  }
+
   @media (min-width: 1440px) {
     background-image: url("/images/Home/Desktop/desktop-1x.jpg");
-    width: 100vw;
+    width: 100%;
     height: 696px;
   }
 
   @media (min-width: 1440px) and (min-resolution: 192dpi) {
     background-image: url("/images/Home/Desktop/desktop-2x.jpg");
-    width: 100vw;
+    width: 100%;
     height: 696px;
+  }
+`;
+
+export const Section = styled.section`
+  width: 100%;
+  height: 488px;
+  padding: 47px 16px 143px 16px;
+  background: linear-gradient(180deg, #080c09 0%, #000 100%);
+
+  @media (min-width: 744px) {
+    height: 461px;
+    padding: 98px 87px 187px 87px;
+  }
+  @media (min-width: 1440px) {
+    display: none;
   }
 `;
 
@@ -38,7 +65,7 @@ export const Title = styled.h1`
   line-height: 32px;
   margin-bottom: 24px;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 744px) {
     margin-bottom: 16px;
 
     font-size: 48px;
@@ -57,21 +84,11 @@ export const Text = styled.h2`
   font-weight: 400;
   line-height: 24px; /* 100% */
 
-  @media (min-width: 1440px) {
+  @media (min-width: 744px) {
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 32px; /* 133.333% */
-  }
-`;
-
-export const Section = styled.section`
-  width: 100%;
-  height: 488px;
-  padding: 47px 16px 143px 16px;
-  background: linear-gradient(180deg, #080c09 0%, #000 100%);
-  @media (min-width: 1440px) {
-    display: none;
   }
 `;
 
@@ -84,6 +101,16 @@ export const Wrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  @media (min-width: 744px) {
+    text-align: start;
+    width: 173px;
+  }
+`;
+
+export const SecondWrapper = styled.div`
+  @media (min-width: 744px) {
+    width: 571px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;

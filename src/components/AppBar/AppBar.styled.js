@@ -15,6 +15,9 @@ export const Header = styled.header`
   justify-content: space-between;
   border-bottom: 1px solid var(--Badges, #f2f4f7);
   background: var(--Inputs, #f7f7f7);
+  @media (min-width: 744px) {
+    padding: 24px;
+  }
   @media (min-width: 1440px) {
     padding: 24px 64px;
     justify-content: flex-start;
@@ -25,7 +28,7 @@ export const Img = styled.img`
   width: 102px;
   height: 11px;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 744px) {
     width: 136px;
     height: 16px;
   }
@@ -34,10 +37,13 @@ export const Img = styled.img`
 export const Nav = styled.nav`
   display: none;
 
-  @media (min-width: 1440px) {
-    margin-left: 450px;
+  @media (min-width: 744px) {
     display: flex;
     gap: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: calc((100vw - 1440px) / 2 + 450px);
   }
 `;
 
@@ -45,7 +51,7 @@ export const MobileNav = styled.nav`
   display: flex;
   gap: 24px;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 744px) {
     display: none;
   }
 `;
