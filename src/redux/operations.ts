@@ -35,7 +35,7 @@ export const fetchCampers = createAsyncThunk<
 
     await delay(500);
 
-    return response.data; // повертаємо без додаткових обгорток
+    return response.data;
   } catch (error: any) {
     return thunkAPI.rejectWithValue(error.message);
   }

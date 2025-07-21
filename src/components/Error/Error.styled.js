@@ -1,22 +1,30 @@
 import styled from "styled-components";
 
 export const ErrorCard = styled.div`
-  width: 888px;
-  height: 368px;
-  padding: 24px;
-  display: flex;
-  gap: 24px;
   list-style: none;
+  width: 334px;
+  padding: 16px 8px;
   border-radius: 20px;
   border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
+  @media (min-width: 1440px) {
+    width: 888px;
+    height: 368px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+  }
 `;
 
 export const Img = styled.img`
-  width: 292px;
-  height: 320px;
+  width: 328px;
+  height: 184px;
   border-radius: 10px;
-  object-fit: cover;
+  /* object-fit: cover; */
+  @media (min-width: 1440px) {
+    width: 292px;
+    height: 320px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -24,6 +32,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
+  @media (max-width: 1439px) {
+    margin-top: 24px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -34,6 +45,10 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: 600;
   line-height: 32px;
+
+  @media (max-width: 1439px) {
+    text-align: center;
+  }
 `;
 
 export const Text = styled.p`
@@ -67,5 +82,9 @@ export const ClearButton = styled.button`
   &:focus {
     background-color: var(--Button-Hover, #d84343);
     border: inherit;
+  }
+
+  @media (max-width: 1439px) {
+    width: 100%;
   }
 `;
