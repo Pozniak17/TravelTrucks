@@ -2,14 +2,20 @@ import { Field, Form } from "formik";
 import styled from "styled-components";
 
 export const StyledForm = styled(Form)`
-  width: 360px;
+  width: 328px;
+  @media (min-width: 1440px) {
+    width: 360px;
+  }
 `;
 
 export const Wrapper = styled.div`
-  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-bottom: 9px;
+  @media (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
 `;
 
 export const Label = styled.label`
@@ -46,17 +52,29 @@ export const FiltersTitle = styled.h2`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
 `;
 
 export const Title = styled.h3`
-  margin-top: 32px;
+  margin-top: 9px;
   color: var(--Main, #101828);
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 24px; /* 120% */
+  line-height: 24px;
+
+  &:last-of-type {
+    margin-top: 24px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 32px;
+
+    &:last-of-type {
+      margin-top: 32px;
+    }
+  }
 `;
 
 export const Divider = styled.span`
@@ -77,13 +95,19 @@ export const List = styled.ul`
   row-gap: 8px;
 
   &:last-of-type {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 1440px) {
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
   }
 `;
 
 export const StyledLabel = styled.label`
-  width: 112px;
-  height: 96px;
+  width: 96px;
+  height: 83px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -91,6 +115,13 @@ export const StyledLabel = styled.label`
   align-items: center;
   border: 1px solid var(--Gray-light, #dadde1);
   border-radius: 12px;
+
+  color: var(--Main, #101828);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.07px;
 
   cursor: pointer;
 
@@ -103,6 +134,33 @@ export const StyledLabel = styled.label`
 
   &:has(input:checked) {
     border: 1px solid var(--Button, #e44848);
+  }
+
+  @media (min-width: 1440px) {
+    width: 112px;
+    height: 96px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--Gray-light, #dadde1);
+    border-radius: 12px;
+
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.08px;
+  }
+`;
+
+export const Img = styled.img`
+  width: 28px;
+  height: 28px;
+
+  @media (min-width: 1440px) {
+    width: 32px;
+    height: 32px;
   }
 `;
 

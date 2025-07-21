@@ -85,7 +85,7 @@ export default function Card({
           <Badges path={Wind} title="AC" />
         </BadgesList>
 
-        <StyledLink to={`/catalog/${id}`} $width="166px">
+        <StyledLink to={`/catalog/${id}`} $width="100%">
           Show more
         </StyledLink>
       </InfoWrapper>

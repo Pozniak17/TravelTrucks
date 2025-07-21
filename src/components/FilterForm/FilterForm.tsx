@@ -10,6 +10,7 @@ import {
   Divider,
   List,
   StyledLabel,
+  Img,
 } from "./FilterForm.styled";
 
 import Wind from "/icons/wind.svg";
@@ -61,7 +62,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
         <List>
           <li>
             <StyledLabel>
-              <img src={Wind} alt="icon" />
+              <Img src={Wind} alt="icon" />
               AC
               <Field type="checkbox" name="AC" />
             </StyledLabel>
@@ -69,7 +70,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
 
           <li>
             <StyledLabel>
-              <img src={Automatic} alt="icon" />
+              <Img src={Automatic} alt="icon" />
               Automatic
               <Field type="checkbox" name="transmission" />
             </StyledLabel>
@@ -77,7 +78,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
 
           <li>
             <StyledLabel>
-              <img src={Cup} alt="icon" />
+              <Img src={Cup} alt="icon" />
               Kitchen
               <Field type="checkbox" name="kitchen" />
             </StyledLabel>
@@ -85,7 +86,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
 
           <li>
             <StyledLabel>
-              <img src={TV} alt="icon" />
+              <Img src={TV} alt="icon" />
               TV
               <Field type="checkbox" name="TV" />
             </StyledLabel>
@@ -93,7 +94,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
 
           <li>
             <StyledLabel>
-              <img src={Shower} alt="icon" />
+              <Img src={Shower} alt="icon" />
               Bathroom
               <Field type="checkbox" name="bathroom" />
             </StyledLabel>
@@ -106,7 +107,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
         <List>
           <li>
             <StyledLabel>
-              <img src="/icons/van.svg" alt="Van" />
+              <Img src="/icons/van.svg" alt="Van" />
               Van
               <Field type="radio" name="form" value="panelTruck" />
             </StyledLabel>
@@ -114,7 +115,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
 
           <li>
             <StyledLabel>
-              <img src="/icons/fully-integrated.svg" alt="Fully integrated" />
+              <Img src="/icons/fully-integrated.svg" alt="Fully integrated" />
               Fully Integrated
               <Field type="radio" name="form" value="fullyIntegrated" />
             </StyledLabel>
@@ -122,14 +123,14 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
 
           <li>
             <StyledLabel>
-              <img src="/icons/alcove.svg" alt="Alcove" />
+              <Img src="/icons/alcove.svg" alt="Alcove" />
               Alcove
               <Field type="radio" name="form" value="alcove" />
             </StyledLabel>
           </li>
         </List>
 
-        <Button width="166px">Search</Button>
+        <Button width="100%">Search</Button>
       </StyledForm>
     </Formik>
   );

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Hero = styled.section`
   width: 100%;
-  aspect-ratio: 1440 / 696; /* або 2 / 1, або інше співвідношення, яке тобі потрібне */
+  aspect-ratio: 1440 / 696;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +19,7 @@ export const Hero = styled.section`
   @media (min-width: 744px) {
     background-image: url("/images/Home/Tablet/tablet-1x.jpg");
     width: 100%;
-    aspect-ratio: 1440 / 600; /* або інше актуальне співвідношення */
+    aspect-ratio: 1440 / 600;
   }
 
   @media (min-width: 744px) and (min-resolution: 192dpi) {
@@ -69,7 +69,7 @@ export const Title = styled.h1`
     font-size: 48px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px; /* 66.667% */
+    line-height: 32px;
   }
 `;
 
@@ -80,13 +80,13 @@ export const Text = styled.h2`
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 100% */
+  line-height: 24px;
 
   @media (min-width: 744px) {
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px; /* 133.333% */
+    line-height: 32px;
   }
 `;
 
