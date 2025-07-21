@@ -41,7 +41,7 @@ export const Hero = styled.section`
 
 export const Section = styled.section`
   width: 100%;
-  height: 488px;
+  height: 100vh;
   padding: 47px 16px 143px 16px;
   background: linear-gradient(180deg, #080c09 0%, #000 100%);
 
