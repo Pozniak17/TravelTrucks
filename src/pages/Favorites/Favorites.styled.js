@@ -3,15 +3,19 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   /* text-align: center; */
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; /* додано */
   background: linear-gradient(to bottom, thistle, plum, darkslateblue);
 
-  min-height: 100vh;
-  padding: 48px 64px;
   box-sizing: border-box;
+
+  @media (min-width: 1440px) {
+    padding: 48px 64px;
+  }
 `;
 
 export const EmptyWrapper = styled.div`
