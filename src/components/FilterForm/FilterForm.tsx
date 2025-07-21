@@ -130,7 +130,7 @@ export default function FilterForm({ onSubmit }: FilterFormProps) {
           </li>
         </List>
 
-        <Button width="100%">Search</Button>
+        <Button width="166px">Search</Button>
       </StyledForm>
     </Formik>
   );
