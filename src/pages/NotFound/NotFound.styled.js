@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding-top: 35px;
+  padding: 8px 16px 18px;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   align-items: center;
+  @media (min-width: 1440px) {
+    padding-top: 35px;
+  }
 `;
 
 export const Button = styled(Link)`
