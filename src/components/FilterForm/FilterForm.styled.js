@@ -3,6 +3,11 @@ import styled from "styled-components";
 
 export const StyledForm = styled(Form)`
   width: 328px;
+
+  @media (min-width: 744px) {
+    width: 100%;
+  }
+
   @media (min-width: 1440px) {
     width: 360px;
   }
@@ -12,7 +17,8 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 9px;
+  margin-bottom: 16px;
+
   @media (min-width: 1440px) {
     margin-bottom: 40px;
   }
@@ -22,9 +28,12 @@ export const Label = styled.label`
   color: var(--Gray, #6c717b);
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 24px; /* 150% */
+
+  @media (min-width: 1440px) {
+    font-weight: 400;
+  }
 `;
 
 export const Input = styled(Field)`
@@ -50,39 +59,34 @@ export const FiltersTitle = styled.h2`
   color: var(--Text, #475467);
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 24px;
 `;
 
 export const Title = styled.h3`
-  margin-top: 9px;
+  margin-top: 16px;
   color: var(--Main, #101828);
   font-family: Inter;
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
   line-height: 24px;
 
-  &:last-of-type {
-    margin-top: 24px;
-  }
-
   @media (min-width: 1440px) {
     margin-top: 32px;
-
-    &:last-of-type {
-      margin-top: 32px;
-    }
   }
 `;
 
 export const Divider = styled.span`
   display: block;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   height: 1px;
   background-color: var(--Gray-light, #dadde1);
+
+  @media (min-width: 744px) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const List = styled.ul`
@@ -94,11 +98,15 @@ export const List = styled.ul`
   column-gap: 12px;
   row-gap: 8px;
 
-  &:last-of-type {
-    margin-bottom: 24px;
+  margin-bottom: 16px;
+
+  @media (min-width: 744px) {
+    flex-wrap: nowrap;
   }
 
   @media (min-width: 1440px) {
+    margin-bottom: 32px;
+    flex-wrap: wrap;
     &:last-of-type {
       margin-bottom: 40px;
     }

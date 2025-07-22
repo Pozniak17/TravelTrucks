@@ -12,7 +12,6 @@ import {
   StyledLabel,
   Img,
 } from "./FilterForm.styled";
-
 import Wind from "/icons/wind.svg";
 import Automatic from "/icons/automatic.svg";
 import Cup from "/icons/cup.svg";
@@ -39,6 +38,7 @@ const initialValues: FilterValues = {
 };
 
 export default function FilterForm({ onSubmit }: FilterFormProps) {
+  // const isDesktop = useMediaQuery({ minWidth: 744, maxWidth: 1439 });
   const locationFieldId = useId();
 
   return (

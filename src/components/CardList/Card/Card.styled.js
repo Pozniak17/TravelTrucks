@@ -7,12 +7,14 @@ export const CardWrapper = styled.li`
   border-radius: 20px;
   border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
-  @media (min-width: 1440px) {
-    width: 888px;
+  @media (min-width: 744px) {
+    width: 696px;
     padding: 24px;
     display: flex;
     gap: 24px;
-    list-style: none;
+  }
+  @media (min-width: 1440px) {
+    width: 888px;
   }
 `;
 
@@ -21,7 +23,7 @@ export const Img = styled.img`
   height: 184px;
   border-radius: 10px;
   object-fit: cover;
-  @media (min-width: 1440px) {
+  @media (min-width: 744px) {
     width: 292px;
     height: 320px;
     object-position: 65% center;
@@ -29,7 +31,7 @@ export const Img = styled.img`
 `;
 
 export const InfoWrapper = styled.div`
-  @media (max-width: 1439px) {
+  @media (max-width: 743px) {
     margin-top: 24px;
   }
   @media (min-width: 1440px) {
@@ -120,7 +122,4 @@ export const BadgesList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  @media (min-width: 480px) {
-    width: 480px;
-  }
 `;
