@@ -3,10 +3,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 8px 16px 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   @media (min-width: 1440px) {
     padding-top: 35px;
   }

@@ -16,7 +16,7 @@ export default function NotFound() {
           src="https://lottie.host/447698dd-36ec-40c7-b646-67257da5ae82/1iT8Cd96wA.lottie"
           loop
           autoplay
-          style={{ height: "60%", width: "60%", margin: "0 auto" }}
+          style={{ maxWidth: "700px", margin: "0 auto" }}
         />
       </Wrapper>
     </Container>
