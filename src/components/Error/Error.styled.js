@@ -7,12 +7,18 @@ export const ErrorCard = styled.div`
   border-radius: 20px;
   border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
-  @media (min-width: 1440px) {
-    width: 888px;
-    height: 368px;
+  margin-top: 24px;
+  @media (min-width: 744px) {
+    width: 696px;
     padding: 24px;
     display: flex;
     gap: 24px;
+    /* height: 400px; */
+  }
+  @media (min-width: 1440px) {
+    margin-top: 32px;
+    width: 888px;
+    height: 368px;
   }
 `;
 
@@ -20,8 +26,7 @@ export const Img = styled.img`
   width: 328px;
   height: 184px;
   border-radius: 10px;
-  /* object-fit: cover; */
-  @media (min-width: 1440px) {
+  @media (min-width: 744px) {
     width: 292px;
     height: 320px;
   }
