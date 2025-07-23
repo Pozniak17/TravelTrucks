@@ -6,11 +6,15 @@ interface Last {
 }
 
 export const Wrapper = styled.div`
-  margin-top: 44px;
-  width: 641px;
-  padding: 44px 57px;
-  border-radius: 10px;
+  margin-top: 24px;
+  padding: 8px 16px;
+  border-radius: 20px;
   border: 1px solid var(--Gray-light, #dadde1);
+  @media (min-width: 1440px) {
+    margin-top: 44px;
+    width: 641px;
+    padding: 44px 57px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -40,22 +44,38 @@ export const StyledForm = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-  width: 527px;
-  height: 60px;
-  padding: 18px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
   border-radius: 12px;
   background: var(--Inputs, #f7f7f7);
   border: inherit;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  @media (min-width: 1440px) {
+    width: 527px;
+    height: 60px;
+    padding: 18px;
+    border-radius: 12px;
+    background: var(--Inputs, #f7f7f7);
+    border: inherit;
+    margin-bottom: 14px;
+  }
 `;
 
 export const Textarea = styled(Field)`
-  width: 527px;
-  height: 118px;
-  border-radius: 10px;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 5px;
   background: var(--Inputs, #f7f7f7);
   border: none;
-  padding: 18px 18px;
+  @media (min-width: 1440px) {
+    width: 527px;
+    height: 118px;
+    border-radius: 10px;
+    border: none;
+    padding: 18px 18px;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -71,7 +91,11 @@ export const Error = styled(ErrorMessage)<Last>`
 `;
 
 export const ButtonWrapper = styled.div`
-  margin-top: 24px;
+  margin-top: 16px;
   display: flex;
   justify-content: center;
+
+  @media (min-width: 1440px) {
+    margin-top: 24px;
+  }
 `;

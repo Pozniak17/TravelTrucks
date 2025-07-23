@@ -1,20 +1,28 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 631px;
-  margin-top: 44px;
-  padding: 44px 52px;
+  margin-top: 24px;
   border-radius: 10px;
-  background: var(--Inputs, #f7f7f7);
+  @media (min-width: 1440px) {
+    width: 631px;
+    margin-top: 44px;
+    padding: 44px 52px;
+  }
 `;
 
 export const List = styled.ul`
-  margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
-  width: 486px;
   gap: 8px;
-  list-style: none;
+  margin-bottom: 24px;
+  @media (min-width: 1440px) {
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 486px;
+    gap: 8px;
+    list-style: none;
+  }
 `;
 
 export const Title = styled.h3`

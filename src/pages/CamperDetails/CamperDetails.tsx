@@ -6,7 +6,6 @@ import { Outlet, useParams } from "react-router-dom";
 
 import axios from "axios";
 import {
-  StyledContainer,
   Title,
   Wrapper,
   ReviewsWrapper,
@@ -20,6 +19,10 @@ import {
   StyledLink,
   Divider,
   DetailsWrapper,
+  MainContainer,
+  StyledWrapper,
+  InfoBlock,
+  TitleBlock,
 } from "./CamperDetails.styled";
 import DetailForm from "../../components/DetailForm/DetailForm";
 import { Loader } from "../../components/Loader/Loader";
@@ -54,63 +57,68 @@ export default function CamperDetails() {
   }));
 
   return (
-    <StyledContainer>
-      <Title>{details.name}</Title>
-      <Wrapper>
-        <ReviewsWrapper>
-          <img src="/icons/star.svg" alt="star icon" />
-          <p>{details.rating}(2 Reviews)</p>
-        </ReviewsWrapper>
+    <>
+      <MainContainer>
+        <StyledWrapper>
+          <TitleBlock>
+            <Title>{details.name}</Title>
+            <InfoBlock>
+              <PriceTitle>€{details.price}</PriceTitle>
+              <img src="/icons/heart.svg" />
+            </InfoBlock>
+          </TitleBlock>
+          <Wrapper>
+            <ReviewsWrapper>
+              <img src="/icons/star.svg" alt="star icon" />
+              <p>{details.rating}(2 Reviews)</p>
+            </ReviewsWrapper>
 
-        <LocationWrapper>
-          <img src="/icons/map2.svg" alt="map icon" />
-          <p>{details.location}</p>
-        </LocationWrapper>
-      </Wrapper>
+            <LocationWrapper>
+              <img src="/icons/map2.svg" alt="map icon" />
+              <p>{details.location}</p>
+            </LocationWrapper>
+          </Wrapper>
+          <ImgList>
+            {details?.gallery?.map((image, index) => (
+              <Item
+                key={image.original}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  setOpen(true);
+                }}
+              >
+                <Img src={image.original} alt="Camper photo" />
+              </Item>
+            ))}
+          </ImgList>
+          <Lightbox
+            open={open}
+            close={() => setOpen(false)}
+            slides={slides}
+            index={currentIndex}
+          />
+          <Description>{details.description}</Description>
+          <div>
+            <TabList>
+              <li>
+                <StyledLink to="features">Features</StyledLink>
+              </li>
+              <li>
+                <StyledLink to="reviews">Reviews</StyledLink>
+              </li>
+            </TabList>
 
-      <PriceTitle>€{details.price}</PriceTitle>
+            <Divider />
 
-      <ImgList>
-        {details?.gallery?.map((image, index) => (
-          <Item
-            key={image.original}
-            onClick={() => {
-              setCurrentIndex(index);
-              setOpen(true);
-            }}
-          >
-            <Img src={image.original} alt="Camper photo" />
-          </Item>
-        ))}
-      </ImgList>
-
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={slides}
-        index={currentIndex}
-      />
-
-      <Description>{details.description}</Description>
-
-      <div>
-        <TabList>
-          <li>
-            <StyledLink to="features">Features</StyledLink>
-          </li>
-          <li>
-            <StyledLink to="reviews">Reviews</StyledLink>
-          </li>
-        </TabList>
-        <Divider />
-
-        <Suspense fallback={<Loader />} />
-        <DetailsWrapper>
-          <Outlet context={details} />
-          <DetailForm />
-        </DetailsWrapper>
-      </div>
-    </StyledContainer>
+            <Suspense fallback={<Loader />} />
+            <DetailsWrapper>
+              <Outlet context={details} />
+            </DetailsWrapper>
+          </div>
+        </StyledWrapper>
+        <DetailForm />
+      </MainContainer>
+    </>
   );
 }
 

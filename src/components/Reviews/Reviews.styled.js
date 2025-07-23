@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 631px;
-  margin-top: 56px;
+  margin-top: 24px;
+  @media (min-width: 1440px) {
+    width: 631px;
+    margin-top: 56px;
+  }
 `;
 
 export const Block = styled.ul`
@@ -10,7 +13,10 @@ export const Block = styled.ul`
 `;
 
 export const Item = styled.li`
-  margin-bottom: 44px;
+  margin-bottom: 24px;
+  @media (min-width: 1440px) {
+    margin-bottom: 44px;
+  }
 
   &:last-child {
     margin-bottom: 0;

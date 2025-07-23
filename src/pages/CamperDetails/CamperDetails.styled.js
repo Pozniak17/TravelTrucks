@@ -1,22 +1,49 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
-  margin: 48px 64px;
+export const MainContainer = styled.div`
+  padding: 32px 8px 40px;
+
+  @media (min-width: 1440px) {
+    padding: 48px 64px;
+  }
+`;
+
+export const StyledWrapper = styled.div`
+  padding: 16px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--Gray-light, #dadde1);
+  background: var(--White, #fff);
 `;
 
 export const Title = styled.h2`
-  margin-bottom: 8px;
   color: var(--Main, #101828);
   font-family: Inter;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 600;
   line-height: 32px;
+  @media (min-width: 1440px) {
+    margin-bottom: 8px;
+
+    font-size: 24px;
+  }
+`;
+
+export const InfoBlock = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const TitleBlock = styled.div`
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Wrapper = styled.div`
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   display: flex;
   gap: 16px;
 `;
@@ -25,12 +52,29 @@ export const ReviewsWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+
+  color: var(--Main, #101828);
+
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 `;
 
 export const LocationWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+
+  color: var(--Main, #101828);
+
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
 `;
 
 export const Text = styled.p`
@@ -49,13 +93,17 @@ export const Text = styled.p`
 `;
 
 export const PriceTitle = styled.h2`
-  margin-bottom: 28px;
   color: var(--Main, #101828);
   font-family: Inter;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 32px; /* 133.333% */
+  line-height: 24px;
+  @media (min-width: 1440px) {
+    margin-bottom: 28px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 `;
 
 export const ImgList = styled.ul`
@@ -84,7 +132,7 @@ export const Img = styled.img`
 `;
 
 export const Description = styled.p`
-  margin-bottom: 60px;
+  margin-bottom: 24px;
   color: var(--Text, #475467);
   font-family: Inter;
   font-size: 16px;
@@ -111,19 +159,20 @@ export const StyledLink = styled(NavLink)`
 
   &.active {
     border-bottom: 5px solid var(--Button, #e44848);
-    padding-bottom: 24px;
+    padding-bottom: 15px;
   }
 `;
 
 export const Divider = styled.span`
-  width: 1312px;
   display: block;
-  margin-top: 24px;
+  margin-top: 16px;
   height: 1px;
   background-color: var(--Gray-light, #dadde1);
 `;
 
 export const DetailsWrapper = styled.div`
-  display: flex;
-  gap: 40px;
+  @media (min-width: 1440px) {
+    display: flex;
+    gap: 40px;
+  }
 `;
