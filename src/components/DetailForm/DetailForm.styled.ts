@@ -7,7 +7,7 @@ interface Last {
 
 export const Wrapper = styled.div`
   margin-top: 24px;
-  padding: 8px 16px;
+  padding: 16px 8px;
   border-radius: 20px;
   border: 1px solid var(--Gray-light, #dadde1);
   @media (min-width: 1440px) {
