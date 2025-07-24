@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   border-radius: 10px;
 
   @media (min-width: 744px) {
+    width: 696px;
     margin-top: 40px;
     padding: 32px 40px 32px 40px;
     background: var(--Inputs, #f7f7f7);

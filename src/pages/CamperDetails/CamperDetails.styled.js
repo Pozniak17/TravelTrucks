@@ -14,15 +14,20 @@ export const MainContainer = styled.div`
 `;
 
 export const StyledWrapper = styled.div`
-  padding: 16px 8px;
   width: 344px;
   border-radius: 20px;
-  border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
 
+  @media (max-width: 1439px) {
+    padding: 16px 8px;
+  }
+
   @media (min-width: 744px) {
-    border: none;
     width: 696px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1312px;
   }
 `;
 
@@ -37,27 +42,35 @@ export const Title = styled.h2`
   @media (min-width: 744px) {
     font-size: 24px;
   }
-  @media (min-width: 1440px) {
-    margin-bottom: 8px;
-  }
 `;
 
 export const InfoBlock = styled.div`
   display: flex;
   gap: 12px;
+  align-items: center;
 `;
 
 export const TitleBlock = styled.div`
-  margin-bottom: 22px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (min-width: 744px) {
+    margin-bottom: 22px;
+  }
+  @media (min-width: 1440px) {
+    margin-bottom: 8px;
+  }
 `;
 
 export const Wrapper = styled.div`
   margin-bottom: 24px;
   display: flex;
   gap: 16px;
+
+  @media (min-width: 1440px) {
+    margin-bottom: 48px;
+  }
 `;
 
 export const ReviewsWrapper = styled.div`
@@ -116,10 +129,6 @@ export const PriceTitle = styled.h2`
     font-size: 24px;
     line-height: 32px;
   }
-
-  @media (min-width: 1440px) {
-    margin-bottom: 28px;
-  }
 `;
 
 export const ImgList = styled.ul`
@@ -155,6 +164,14 @@ export const Description = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
+
+  @media (min-width: 744px) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 60px;
+  }
 `;
 
 export const TabList = styled.ul`
@@ -195,9 +212,14 @@ export const Divider = styled.span`
   }
 `;
 
-export const DetailsWrapper = styled.div`
+export const WrapperBox = styled.div`
   @media (min-width: 1440px) {
     display: flex;
     gap: 40px;
+  }
+`;
+
+export const DetailsWrapper = styled.div`
+  @media (min-width: 1440px) {
   }
 `;

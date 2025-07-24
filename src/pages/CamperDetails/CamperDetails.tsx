@@ -23,6 +23,7 @@ import {
   StyledWrapper,
   InfoBlock,
   TitleBlock,
+  WrapperBox,
 } from "./CamperDetails.styled";
 import DetailForm from "../../components/DetailForm/DetailForm";
 import { Loader } from "../../components/Loader/Loader";
@@ -59,46 +60,47 @@ export default function CamperDetails() {
   return (
     <>
       <MainContainer>
-        <StyledWrapper>
-          <TitleBlock>
-            <Title>{details.name}</Title>
-            <InfoBlock>
-              <PriceTitle>€{details.price}</PriceTitle>
-              <img src="/icons/heart.svg" />
-            </InfoBlock>
-          </TitleBlock>
-          <Wrapper>
-            <ReviewsWrapper>
-              <img src="/icons/star.svg" alt="star icon" />
-              <p>{details.rating}(2 Reviews)</p>
-            </ReviewsWrapper>
+        <div>
+          <StyledWrapper>
+            <TitleBlock>
+              <Title>{details.name}</Title>
+              <InfoBlock>
+                <PriceTitle>€{details.price}</PriceTitle>
+                <img src="/icons/heart.svg" />
+              </InfoBlock>
+            </TitleBlock>
+            <Wrapper>
+              <ReviewsWrapper>
+                <img src="/icons/star.svg" alt="star icon" />
+                <p>{details.rating}(2 Reviews)</p>
+              </ReviewsWrapper>
 
-            <LocationWrapper>
-              <img src="/icons/map2.svg" alt="map icon" />
-              <p>{details.location}</p>
-            </LocationWrapper>
-          </Wrapper>
-          <ImgList>
-            {details?.gallery?.map((image, index) => (
-              <Item
-                key={image.original}
-                onClick={() => {
-                  setCurrentIndex(index);
-                  setOpen(true);
-                }}
-              >
-                <Img src={image.original} alt="Camper photo" />
-              </Item>
-            ))}
-          </ImgList>
-          <Lightbox
-            open={open}
-            close={() => setOpen(false)}
-            slides={slides}
-            index={currentIndex}
-          />
-          <Description>{details.description}</Description>
-          <div>
+              <LocationWrapper>
+                <img src="/icons/map2.svg" alt="map icon" />
+                <p>{details.location}</p>
+              </LocationWrapper>
+            </Wrapper>
+            <ImgList>
+              {details?.gallery?.map((image, index) => (
+                <Item
+                  key={image.original}
+                  onClick={() => {
+                    setCurrentIndex(index);
+                    setOpen(true);
+                  }}
+                >
+                  <Img src={image.original} alt="Camper photo" />
+                </Item>
+              ))}
+            </ImgList>
+            <Lightbox
+              open={open}
+              close={() => setOpen(false)}
+              slides={slides}
+              index={currentIndex}
+            />
+            <Description>{details.description}</Description>
+
             <TabList>
               <li>
                 <StyledLink to="features">Features</StyledLink>
@@ -110,13 +112,14 @@ export default function CamperDetails() {
 
             <Divider />
 
-            <Suspense fallback={<Loader />} />
-            <DetailsWrapper>
+            <WrapperBox>
+              <Suspense fallback={<Loader />} />
               <Outlet context={details} />
-            </DetailsWrapper>
-          </div>
-        </StyledWrapper>
-        <DetailForm />
+
+              <DetailForm />
+            </WrapperBox>
+          </StyledWrapper>
+        </div>
       </MainContainer>
     </>
   );

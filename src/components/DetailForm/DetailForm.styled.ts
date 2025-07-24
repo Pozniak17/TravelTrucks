@@ -6,18 +6,18 @@ interface Last {
 }
 
 export const Wrapper = styled.div`
-  width: 344px;
   margin-top: 24px;
-  padding: 16px 8px;
   border-radius: 20px;
-  border: 1px solid var(--Gray-light, #dadde1);
+
   @media (min-width: 744px) {
     width: 696px;
     padding: 32px 44px;
+    border: 1px solid var(--Gray-light, #dadde1);
   }
   @media (min-width: 1440px) {
     margin-top: 44px;
     width: 641px;
+    border: 1px solid var(--Gray-light, #dadde1);
     padding: 44px 57px;
   }
 `;
