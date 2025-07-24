@@ -14,6 +14,10 @@ export const Block = styled.ul`
 
 export const Item = styled.li`
   margin-bottom: 24px;
+
+  @media (min-width: 744px) {
+    margin-bottom: 32px;
+  }
   @media (min-width: 1440px) {
     margin-bottom: 44px;
   }

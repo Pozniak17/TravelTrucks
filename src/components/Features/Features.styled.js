@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   margin-top: 24px;
   border-radius: 10px;
+
+  @media (min-width: 744px) {
+    margin-top: 40px;
+    padding: 32px 40px 32px 40px;
+    background: var(--Inputs, #f7f7f7);
+  }
   @media (min-width: 1440px) {
     width: 631px;
     margin-top: 44px;
@@ -15,6 +21,10 @@ export const List = styled.ul`
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 24px;
+  @media (min-width: 744px) {
+    width: 462px;
+  }
+
   @media (min-width: 1440px) {
     margin-bottom: 100px;
     display: flex;

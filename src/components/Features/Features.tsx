@@ -1,7 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { Divider } from "../FilterForm/FilterForm.styled";
 import Badges from "../shared/Badges/Badges";
-import { Wrapper, List, DetailsList, Item } from "./Features.styled";
+import { Wrapper, List, DetailsList, Item, Title } from "./Features.styled";
 import { CamperOptions } from "../../types/Card.types";
 
 export default function Features() {
@@ -17,7 +17,7 @@ export default function Features() {
         <Badges path="/icons/radio.svg" title="Radio" />
       </List>
 
-      <h3>Vehicle details</h3>
+      <Title>Vehicle details</Title>
       <Divider />
 
       <DetailsList>

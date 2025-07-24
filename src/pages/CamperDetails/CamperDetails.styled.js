@@ -4,6 +4,10 @@ import styled from "styled-components";
 export const MainContainer = styled.div`
   padding: 32px 8px 40px;
 
+  @media (min-width: 744px) {
+    padding: 40px 24px 52px;
+  }
+
   @media (min-width: 1440px) {
     padding: 48px 64px;
   }
@@ -11,9 +15,15 @@ export const MainContainer = styled.div`
 
 export const StyledWrapper = styled.div`
   padding: 16px 8px;
+  width: 344px;
   border-radius: 20px;
   border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
+
+  @media (min-width: 744px) {
+    border: none;
+    width: 696px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -23,10 +33,12 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: 600;
   line-height: 32px;
+
+  @media (min-width: 744px) {
+    font-size: 24px;
+  }
   @media (min-width: 1440px) {
     margin-bottom: 8px;
-
-    font-size: 24px;
   }
 `;
 
@@ -99,10 +111,14 @@ export const PriceTitle = styled.h2`
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
-  @media (min-width: 1440px) {
-    margin-bottom: 28px;
+
+  @media (min-width: 744px) {
     font-size: 24px;
     line-height: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 28px;
   }
 `;
 
@@ -161,6 +177,12 @@ export const StyledLink = styled(NavLink)`
     border-bottom: 5px solid var(--Button, #e44848);
     padding-bottom: 15px;
   }
+
+  @media (min-width: 744px) {
+    &.active {
+      padding-bottom: 24px;
+    }
+  }
 `;
 
 export const Divider = styled.span`
@@ -168,6 +190,9 @@ export const Divider = styled.span`
   margin-top: 16px;
   height: 1px;
   background-color: var(--Gray-light, #dadde1);
+  @media (min-width: 744px) {
+    margin-top: 25px;
+  }
 `;
 
 export const DetailsWrapper = styled.div`
