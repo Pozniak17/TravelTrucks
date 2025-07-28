@@ -12,8 +12,6 @@ import {
   LocationWrapper,
   PriceTitle,
   ImgList,
-  Item,
-  Img,
   Description,
   TabList,
   StyledLink,
@@ -24,10 +22,12 @@ import {
   InfoBlock,
   TitleBlock,
   WrapperBox,
+  Item,
 } from "./CamperDetails.styled";
 import DetailForm from "../../components/DetailForm/DetailForm";
 import { Loader } from "../../components/Loader/Loader";
 import { CamperOptions } from "../../types/Card.types";
+import CarsSlider from "../../components/shared/Slider/Slider";
 
 export default function CamperDetails() {
   const [details, setDetails] = useState<CamperOptions | null>(null);
@@ -80,25 +80,26 @@ export default function CamperDetails() {
                 <p>{details.location}</p>
               </LocationWrapper>
             </Wrapper>
+
             <ImgList>
-              {details?.gallery?.map((image, index) => (
-                <Item
-                  key={image.original}
-                  onClick={() => {
+              <Item>
+                <CarsSlider
+                  images={details.gallery?.map((item) => item.original)}
+                  onImageClick={(index) => {
                     setCurrentIndex(index);
                     setOpen(true);
                   }}
-                >
-                  <Img src={image.original} alt="Camper photo" />
-                </Item>
-              ))}
+                />
+              </Item>
             </ImgList>
+
             <Lightbox
               open={open}
               close={() => setOpen(false)}
               slides={slides}
               index={currentIndex}
             />
+
             <Description>{details.description}</Description>
 
             <TabList>
@@ -126,3 +127,20 @@ export default function CamperDetails() {
 }
 
 // 1. іконки взяти одні й ті, задати width
+
+//  {details?.gallery?.map((image, index) => (
+//   <Item
+//     key={image.original}
+//     onClick={() => {
+//       setCurrentIndex(index);
+//       setOpen(true);
+//     }}
+//   >
+//     <CarsSlider>
+//       <div>
+//         <img src={details.gallery.origi} />
+//       </div>
+//     </CarsSlider>
+//     {/*    // <Img src={image.original} alt="Camper photo" /> */}
+//   </Item>
+// ))}

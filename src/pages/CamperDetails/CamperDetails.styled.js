@@ -139,22 +139,19 @@ export const ImgList = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 292px;
-  height: 312px;
-`;
-
-export const Img = styled.img`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  object-position: 70% center;
+  width: 328px;
   cursor: pointer;
   border-radius: 10px;
   transition: transform 0.4s ease-in-out;
-  &:hover {
-    transform: scale(1.2); /* збільшує на 5% */
+  /* &:hover {
+    transform: scale(1.2); збільшує на 5%
+  } */
+  @media (min-width: 744px) {
+    width: 524px;
   }
 `;
+
+export const Img = styled.img``;
 
 export const Description = styled.p`
   margin-bottom: 24px;
