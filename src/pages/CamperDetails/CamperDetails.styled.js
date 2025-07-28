@@ -14,14 +14,14 @@ export const MainContainer = styled.div`
 `;
 
 export const StyledWrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
   width: 344px;
   border-radius: 20px;
   background: var(--White, #fff);
 
   @media (max-width: 1439px) {
     padding: 16px 8px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (min-width: 744px) {
@@ -136,6 +136,7 @@ export const PriceTitle = styled.h2`
 export const ImgList = styled.ul`
   margin-bottom: 28px;
   display: flex;
+  justify-content: center;
   gap: 48px;
   list-style: none;
 `;
