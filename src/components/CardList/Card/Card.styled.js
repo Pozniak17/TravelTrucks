@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const CardWrapper = styled.li`
   list-style: none;
-  width: 334px;
+  width: 344px;
   padding: 16px 8px;
   border-radius: 20px;
   border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
+  margin-left: auto;
+  margin-right: auto;
   @media (min-width: 744px) {
     width: 696px;
     padding: 24px;

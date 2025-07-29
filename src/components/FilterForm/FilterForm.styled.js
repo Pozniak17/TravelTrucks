@@ -3,13 +3,17 @@ import styled from "styled-components";
 
 export const StyledForm = styled(Form)`
   width: 328px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (min-width: 744px) {
-    width: 100%;
+    width: 696px;
   }
 
   @media (min-width: 1440px) {
     width: 360px;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
