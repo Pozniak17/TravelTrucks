@@ -28,7 +28,7 @@ export default function Home() {
           <Title>Campers of your dreams</Title>
           <Text>You can find everything you want in our catalog</Text>
           <ButtonWrapper>
-            <StyledLink $buttonstyle="primary" $width="100%" to="/catalog">
+            <StyledLink $buttonstyle="primary" $width="166px" to="/catalog">
               View Now
             </StyledLink>
           </ButtonWrapper>
