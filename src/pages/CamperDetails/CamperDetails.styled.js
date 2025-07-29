@@ -17,11 +17,11 @@ export const StyledWrapper = styled.div`
   width: 344px;
   border-radius: 20px;
   background: var(--White, #fff);
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 1439px) {
     padding: 16px 8px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   @media (min-width: 744px) {
@@ -185,6 +185,7 @@ export const Description = styled.p`
 
   @media (min-width: 744px) {
     margin-bottom: 40px;
+    text-align: center;
   }
 
   @media (min-width: 1440px) {
