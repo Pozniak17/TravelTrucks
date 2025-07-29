@@ -68,16 +68,16 @@ export default function Catalog() {
     console.log(filteredData);
   };
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  if (isLoading) {
+    return <Loader />;
+  }
 
   // if (error || campers.length === 0) {
   //   return <Error />;
   // }
   return (
     <Container>
-      {isLoading && <Loader />}
+      {/* {isLoading && <Loader />} */}
       <FilterForm onSubmit={formHandleSubmit} />
       {!isLoading && error && <Error />}
       {!isLoading && !error && campers.length > 0 && (
