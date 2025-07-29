@@ -142,19 +142,37 @@ export const ImgList = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 328px;
   cursor: pointer;
+  width: 328px;
+  object-fit: contain;
   border-radius: 10px;
-  transition: transform 0.4s ease-in-out;
-  /* &:hover {
-    transform: scale(1.2); збільшує на 5%
-  } */
   @media (min-width: 744px) {
     width: 524px;
   }
+  @media (min-width: 1440px) {
+    width: 292px;
+    height: 312px;
+    object-fit: cover;
+  }
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+  transition: transform 0.4s ease-in-out;
+  width: 328px;
+  object-fit: contain;
+  border-radius: 10px;
+  @media (min-width: 744px) {
+    width: 524px;
+  }
+  @media (min-width: 1440px) {
+    width: 292px;
+    height: 312px;
+    object-fit: cover;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`;
 
 export const Description = styled.p`
   margin-bottom: 24px;
@@ -216,10 +234,5 @@ export const WrapperBox = styled.div`
   @media (min-width: 1440px) {
     display: flex;
     gap: 40px;
-  }
-`;
-
-export const DetailsWrapper = styled.div`
-  @media (min-width: 1440px) {
   }
 `;

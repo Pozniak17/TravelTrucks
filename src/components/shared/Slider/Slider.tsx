@@ -26,7 +26,7 @@ export default function CarsSlider({ images, onImageClick }: CarsSliderProps) {
           <div key={index}>
             <img
               src={url}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", borderRadius: 10 }}
               onClick={() => {
                 document.activeElement instanceof HTMLElement &&
                   document.activeElement.blur();

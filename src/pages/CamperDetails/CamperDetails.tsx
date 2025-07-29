@@ -16,26 +16,28 @@ import {
   TabList,
   StyledLink,
   Divider,
-  DetailsWrapper,
   MainContainer,
   StyledWrapper,
   InfoBlock,
   TitleBlock,
   WrapperBox,
   Item,
+  Img,
 } from "./CamperDetails.styled";
 import DetailForm from "../../components/DetailForm/DetailForm";
 import { Loader } from "../../components/Loader/Loader";
 import { CamperOptions } from "../../types/Card.types";
 import CarsSlider from "../../components/shared/Slider/Slider";
+import { useMediaQuery } from "react-responsive";
 
 export default function CamperDetails() {
   const [details, setDetails] = useState<CamperOptions | null>(null);
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { id } = useParams();
+  const isDesktop = useMediaQuery({ minWidth: 1440 });
 
   console.log(details);
-  const { id } = useParams();
 
   useEffect(() => {
     async function fetchCamperDetails() {
@@ -82,15 +84,29 @@ export default function CamperDetails() {
             </Wrapper>
 
             <ImgList>
-              <Item>
-                <CarsSlider
-                  images={details.gallery?.map((item) => item.original)}
-                  onImageClick={(index) => {
-                    setCurrentIndex(index);
-                    setOpen(true);
-                  }}
-                />
-              </Item>
+              {!isDesktop ? (
+                <Item>
+                  <CarsSlider
+                    images={details.gallery?.map((item) => item.original)}
+                    onImageClick={(index) => {
+                      setCurrentIndex(index);
+                      setOpen(true);
+                    }}
+                  />
+                </Item>
+              ) : (
+                details?.gallery?.map((image, index) => (
+                  <Item
+                    key={image.original}
+                    onClick={() => {
+                      setCurrentIndex(index);
+                      setOpen(true);
+                    }}
+                  >
+                    <Img src={image.original} alt={`car-${index}`} />
+                  </Item>
+                ))
+              )}
             </ImgList>
 
             <Lightbox
