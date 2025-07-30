@@ -27,7 +27,7 @@ import {
 import DetailForm from "../../components/DetailForm/DetailForm";
 import { Loader } from "../../components/Loader/Loader";
 import { CamperOptions } from "../../types/Card.types";
-import CarsSlider from "../../components/shared/Slider/Slider";
+import CarsSlider from "../../components/Slider/Slider";
 import { useMediaQuery } from "react-responsive";
 
 export default function CamperDetails() {

@@ -2,7 +2,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 
 import AppBar from "./components/AppBar/AppBar";
-import ScrollToTop from "./components/shared/ScrollToTop/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { Loader } from "./components/Loader/Loader";
 import { useAppDispatch } from "./components/utils/hooks";
 import { clearFilters } from "./redux/filtersSlice";

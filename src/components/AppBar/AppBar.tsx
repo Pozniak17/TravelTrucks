@@ -1,6 +1,9 @@
+import { useState } from "react";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import { Header, Nav, Link, Logo, Img, MobileNav } from "./AppBar.styled";
 
 export default function AppBar() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Header>
       <Logo to="/">
@@ -13,8 +16,12 @@ export default function AppBar() {
       </Nav>
 
       <MobileNav>
-        <Link to="/favorites"></Link>
-        <img src="/icons/Menu.svg" />
+        {isOpen ? (
+          <img src="/icons/square-x.svg" onClick={() => setIsOpen(false)} />
+        ) : (
+          <img src="/icons/Menu.svg" onClick={() => setIsOpen(true)} />
+        )}
+        <MobileMenu status={isOpen} />
       </MobileNav>
     </Header>
   );
