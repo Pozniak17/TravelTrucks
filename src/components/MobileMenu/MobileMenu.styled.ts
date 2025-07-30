@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const MenuNav = styled.nav<{ $status: boolean }>`
-  position: fixed;
+  position: absolute;
   top: 58px;
   left: -100%;
   display: flex;
