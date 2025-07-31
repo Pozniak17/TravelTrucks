@@ -15,6 +15,7 @@ import Error from "../../components/Error/Error.js";
 import { FilterValues } from "../../types/Form.types.js";
 import { RootState } from "../../redux/store.js";
 import { fetchCampers } from "../../redux/operations.js";
+import SortPanel from "../../components/SortPanel/SortPanel";
 
 export type NextPage = {
   loadMore: () => void;
@@ -79,6 +80,7 @@ export default function Catalog() {
     <Container>
       {/* {isLoading && <Loader />} */}
       <FilterForm onSubmit={formHandleSubmit} />
+
       {!isLoading && error && <Error />}
       {!isLoading && !error && campers.length > 0 && (
         <CardList nextPage={loadMore} />

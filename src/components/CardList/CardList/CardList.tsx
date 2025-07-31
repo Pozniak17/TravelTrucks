@@ -5,6 +5,7 @@ import { CamperOptions, CardListProps } from "../../../types/Card.types";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import { RootState } from "../../../redux/store";
 import Button from "../../shared/Button/Button";
+import SortPanel from "../../SortPanel/SortPanel";
 
 export default function CardList({ nextPage }: CardListProps) {
   const dispatch = useAppDispatch();
@@ -17,6 +18,7 @@ export default function CardList({ nextPage }: CardListProps) {
 
   return (
     <div>
+      <SortPanel />
       <List>
         {Array.isArray(items) &&
           items.map((car: CamperOptions) => (
