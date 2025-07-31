@@ -1,17 +1,23 @@
-import { useId, useState } from "react";
+import { useId } from "react";
 import { Label, Select, Wrapper } from "./SortPanel.styled";
 
-export default function SortPanel() {
+interface SoftPanelProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+export default function SortPanel({ value, onChange }: SoftPanelProps) {
   const selectId = useId();
-  const [sort, setSort] = useState<any>(null);
+
   return (
     <Wrapper>
       <Label htmlFor={selectId}>Sort</Label>
       <Select
         id={selectId}
-        value={sort}
-        onChange={(evt: any) => setSort(evt.target.value)}
+        value={value}
+        onChange={(evt: any) => onChange(evt.target.value)}
       >
+        <option value="">-- Choose --</option>
         <option value="rating">For rating</option>
         <option value="price">For price</option>
       </Select>

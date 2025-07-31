@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { FormikHelpers } from "formik";
 
@@ -15,13 +15,14 @@ import Error from "../../components/Error/Error.js";
 import { FilterValues } from "../../types/Form.types.js";
 import { RootState } from "../../redux/store.js";
 import { fetchCampers } from "../../redux/operations.js";
-import SortPanel from "../../components/SortPanel/SortPanel";
+// import SortPanel from "../../components/SortPanel/SortPanel";
 
 export type NextPage = {
   loadMore: () => void;
 };
 
 export default function Catalog() {
+  const [sortKey, setSortKey] = useState("");
   const dispatch = useAppDispatch();
   const campers = useAppSelector((state: RootState) => state.campers.items);
   const { isLoading, error } = useAppSelector(
@@ -29,6 +30,7 @@ export default function Catalog() {
   );
   const filters = useAppSelector((state: RootState) => state.filters);
   const [limit, setLimit] = useState<number>(4);
+  const [isSorting, setIsSorting] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCampers({ limit, filters }));
@@ -38,6 +40,17 @@ export default function Catalog() {
   useEffect(() => {
     setLimit(4);
   }, [filters]);
+
+  useEffect(() => {
+    if (sortKey) {
+      setIsSorting(true);
+      const timeout = setTimeout(() => {
+        setIsSorting(false);
+      }, 500);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [sortKey]);
 
   function loadMore() {
     setLimit((limit) => limit + 4);
@@ -69,23 +82,43 @@ export default function Catalog() {
     console.log(filteredData);
   };
 
+  const sortedCampers = useMemo(() => {
+    if (sortKey === "price") {
+      return [...campers].sort((a, b) => a.price - b.price);
+    }
+    if (sortKey === "rating") {
+      return [...campers].sort((a, b) => b.rating - a.rating);
+    }
+    return campers;
+  }, [campers, sortKey]);
+
   if (isLoading) {
     return <Loader />;
   }
 
-  // if (error || campers.length === 0) {
-  //   return <Error />;
-  // }
   return (
     <Container>
-      {/* {isLoading && <Loader />} */}
-      <FilterForm onSubmit={formHandleSubmit} />
+      {isSorting ? (
+        <Loader />
+      ) : (
+        <>
+          <FilterForm onSubmit={formHandleSubmit} />
 
-      {!isLoading && error && <Error />}
-      {!isLoading && !error && campers.length > 0 && (
-        <CardList nextPage={loadMore} />
+          {!isLoading && error && <Error />}
+
+          {!isLoading && !error && campers.length > 0 && (
+            <CardList
+              sortedCampers={sortedCampers}
+              nextPage={loadMore}
+              value={sortKey}
+              onChange={setSortKey}
+              isSorting={isSorting}
+            />
+          )}
+
+          {!isLoading && !error && campers.length === 0 && <Error />}
+        </>
       )}
-      {!isLoading && !error && campers.length === 0 && <Error />}
     </Container>
   );
 }

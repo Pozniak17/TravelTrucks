@@ -1,13 +1,28 @@
 import Card from "../Card/Card";
 import { List, ButtonWrapper } from "./CardList.styled";
 import { toggleFavorite } from "../../../redux/favoritesSlice";
-import { CamperOptions, CardListProps } from "../../../types/Card.types";
+import { CamperOptions } from "../../../types/Card.types";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import { RootState } from "../../../redux/store";
 import Button from "../../shared/Button/Button";
 import SortPanel from "../../SortPanel/SortPanel";
+import { Loader } from "../../Loader/Loader";
 
-export default function CardList({ nextPage }: CardListProps) {
+interface Props {
+  nextPage: () => void;
+  value: string;
+  sortedCampers: any;
+  onChange: (value: string) => void;
+  isSorting: any;
+}
+
+export default function CardList({
+  nextPage,
+  sortedCampers,
+  value,
+  onChange,
+  isSorting,
+}: Props) {
   const dispatch = useAppDispatch();
   const { items, total } = useAppSelector((state: RootState) => state.campers);
   const favorites = useAppSelector((state: RootState) => state.favorites.items);
@@ -18,10 +33,10 @@ export default function CardList({ nextPage }: CardListProps) {
 
   return (
     <div>
-      <SortPanel />
+      <SortPanel value={value} onChange={onChange} />
       <List>
         {Array.isArray(items) &&
-          items.map((car: CamperOptions) => (
+          sortedCampers.map((car: CamperOptions) => (
             <Card
               key={car.id}
               {...car}
