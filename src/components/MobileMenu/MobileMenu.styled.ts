@@ -27,6 +27,7 @@ export const List = styled.ul`
   padding-top: 8px;
   padding-bottom: 8px;
   display: flex;
+  justify-content: center;
   gap: 8px;
 `;
 
@@ -47,12 +48,5 @@ export const StyledLink = styled(NavLink)`
   line-height: 24px; /* 150% */
   &.active {
     color: #e76712; /* Колір для іконки й тексту */
-  }
-`;
-
-export const StyledSpan = styled.span<{ $active: boolean }>`
-  svg {
-    fill: ${({ $active }) => ($active ? "#e76712" : "#ccc")};
-    transition: fill 0.3s ease;
   }
 `;

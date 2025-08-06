@@ -1,11 +1,10 @@
 import { MenuNav, List, Item, StyledLink } from "./MobileMenu.styled";
-import HeartIcon from "../icons/heart-2.svg"; // або "../icons/heart-2.svg"
 
-type Props = {
+type MobileMenuProps = {
   status: boolean;
 };
 
-export default function MobileMenu({ status }: Props) {
+export default function MobileMenu({ status }: MobileMenuProps) {
   return (
     <MenuNav $status={status}>
       <List>
@@ -21,6 +20,7 @@ export default function MobileMenu({ status }: Props) {
             )}
           </StyledLink>
         </Item>
+
         <Item>
           <StyledLink to="/catalog">
             {({ isActive }) => (

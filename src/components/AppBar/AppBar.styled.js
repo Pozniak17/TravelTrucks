@@ -1,10 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Logo = styled(NavLink)`
-  text-decoration: none;
-`;
-
 export const Header = styled.header`
   margin-left: auto;
   margin-right: auto;
@@ -22,6 +18,10 @@ export const Header = styled.header`
     padding: 24px 64px;
     justify-content: flex-start;
   }
+`;
+
+export const Logo = styled(NavLink)`
+  text-decoration: none;
 `;
 
 export const Img = styled.img`
@@ -47,15 +47,6 @@ export const Nav = styled.nav`
   }
 `;
 
-export const MobileNav = styled.nav`
-  display: flex;
-  gap: 24px;
-
-  @media (min-width: 744px) {
-    display: none;
-  }
-`;
-
 export const Link = styled(NavLink)`
   text-decoration: none;
   color: var(--Main, #101828);
@@ -68,5 +59,14 @@ export const Link = styled(NavLink)`
 
   &.active {
     color: var(--Button-Hover, #d84343);
+  }
+`;
+
+export const MobileNav = styled.nav`
+  display: flex;
+  gap: 24px;
+
+  @media (min-width: 744px) {
+    display: none;
   }
 `;
